@@ -14,7 +14,7 @@
 \usepackage{wrapfig}
 \usepackage{lipsum}
 \usepackage{float}
-\usepackage{newcaptions} % changes the appearance of captions
+%\usepackage{newcaptions} % changes the appearance of captions
 \usepackage{url}
 \usepackage{soul} % enables a better version of "\underline{}", called '\ul{}", which for instance permits linebreaks
 
@@ -144,8 +144,8 @@
 \baselineskip=11pt
 \def\msun{{\rm M_{\odot}}}
 
-\textheight=24.3cm
-\textwidth=16.8cm
+%\textheight=24.3cm
+%\textwidth=16.8cm
 
 \begin{document}
 \topmargin=-2.105cm
@@ -154,7 +154,7 @@
 
 \begin{center}
 {\bf Extracting Information from the Large Scale Structure of the Universe\\}
-Scott Dodelson
+Scott Dodelson (PI), Peikai Li, Andresa Rodrigues de Campos, John Urbanic
 \end{center}
 
 \begin{small}
@@ -164,9 +164,41 @@ Scott Dodelson
 
 \section{Introduction and Scientific Background}
 
+Discoveries are hidden in previously unexplored domains. In the field of cosmology, the last unexplored domain are the largest scales in the universe. Our ventures in this area to date have revealed the need for a mysterious substance dubbed dark energy that is driving the current epoch of acceleration of the universe and the need for dark matter unrelated to any particles that comprise us and the world around us. And there is more: there are hints of anomalies on the largest scales that may be related to yet new pieces of physics. 
+
+We are fortunate to be living in a time when large surveys are capturing more and more parts of the sky. The Dark Energy Survey, for which the PI is the Co-Chair of the Science Committee, has surveyed one tenth of the sky out to redshifts $z>1$ (corresponding to distances billions of light years away when the universe was 8 billion years younger). The Large Synoptic Survey Telescope (LSST) will survey half of the sky every night and peer much deeper over its ten years of operations scheduled to begin in 2022. 
+
+At the same time, numerical simulations have improved so that their data alone cannot be analyzed on local machines. Analysis on simulations of course is a prerequisite for any robust analysis on real data. 
+
+Our group is well-situated to make discoveries in this field because we can contribute:
+\begin{itemize}
+\item Leadership in current surveys
+\item Theoretical expertise
+\item Software Development
+\item Resources at the PSC
+\end{itemize} 
+The PI led the effort to extract cosmology from DES using its first year of data, with fifteen papers published in 2017. There is a similar, although larger, scale effort ongoing right now to analyze 3 times as much data, the largest cosmological data set ever explored. Besides this, though, we have presented a number of innovative ideas for extracting information from surveys and indeed are funded by both the NSF and DOE to apply these ideas to simulations and surveys. We also led the development of {\tt cosmosis}~\cite{Zuntz:2014csq}, a software framework designed for cosmological analyses. A large part of our request is to run Markov Chain Monte Carlo simulations (as we did for the Year 1 results) on DES data and simulations. This is a very low-risk high-reward program, as we are very familiar with the code base, and there is little development required. The one piece we are missing is the computational resources, and that is the purpose of this proposal.
+
+Here we briefly outline the scope of the two main thrusts of this proposal, relegating details to later sections. First, we aim to contribute heavily to the DES Year 3 (Y3) analysis (the first three years of data survey 5000 square degrees of the Southern Sky). DES is an international collaboration with over 500 members. The key project for Y3 will result in close to 30 papers culminating in the key paper that will be alphabetically ordered. 
+Student Andresa Rodrigues de Campos is leading one of the {\it essential papers} that will feed into the key paper. Her work on exploring tension metrics will be the basis of making a quantitative decision about the compatibility of the universe recently as measured by DES with the very early universe as measured by experiments that probe the cosmic microwave background.
+
+The second thrust is to explore the idea of inferring information about the largest wavelength perturbations in the universe by measuring small wavelength modes, exploiting the fact that the small-scale structure depends in a predictable way on the presence of long wavelength modes.
+
+
+
 \section{Progress to Date and Motivation for Future Work}
 
+\subsection{DES Chains}
+Andresa,1 page
+\subsection{Anisotropic Clustering on Simulations}
+Peikai, 1 page
+
 \section{Proposed Computational Methods}
+\subsection{DES Chains}
+Andresa,1 page
+\subsection{Anisotropic Clustering on Simulations}
+Peikai, 1 page
+
 
 \section{Proposed Analyses and Justification of Requested Resources}
 
