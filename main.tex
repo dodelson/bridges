@@ -75,7 +75,7 @@
 }
 \newcommand{\Spng}[2]{
     \begin{figure}[htb]
-    \sfig{./#1.png}{.9\columnwidth}
+    \sfig{#1.png}{.9\columnwidth}
     \caption{{\small #2}}
     \label{fig:#1}
     \end{figure}
@@ -191,13 +191,30 @@ The second thrust is to explore the idea of inferring information about the larg
 \subsection{DES Chains}
 Andresa,1 page
 \subsection{Anisotropic Clustering on Simulations}
-Peikai, 1 page
+We tried to use small wavelength modes to detect long wavelength modes starting from perturbation theory:
+\begin{eqnarray}
+\delta^{(2)}(\vec{k}_s)=\int\frac{d^{3}\vec{k}_l}{(2 \pi)^3}F_2(\vec{k}_s-\vec{k}_l,\vec{k}_l)\delta_{s}^{(1)}(\vec{k}_s-\vec{k}_l)\delta_l^{(1)}(\vec{k}_l)
+\end{eqnarray}
+$\delta$ is mass perturbation function and the upper-subscript means orders of perturbation. And similar to CMB lensing case, we can construct a quadratic estimator as:
+\begin{eqnarray}
+\hat{\delta}_l^{(1)}(\vec{k}_l)=A(\vec{k}_l)\int \frac{d^3 \vec{k}_s}{(2\pi)^3} g(\vec{k}_s,\vec{k}_s')\delta_s(\vec{k}_s)\delta_s(\vec{k}_s')
+\end{eqnarray}
+with $g$ being weighting function, $\vec{k}_s'=\vec{k}_l-\vec{k}_s$ and $A$ is defined via $\langle \hat{\delta}_l^{(1)}(\vec{k}_l) \rangle=\hat{\delta}_l^{(1)}(\vec{k}_l)$:
+\begin{eqnarray}
+A(\vec{k}_l)&=&\bigg[\int \frac{d^3 \vec{k}_s}{(2\pi)^3} g(\vec{k}_s,\vec{k}_s')f(\vec{k}_s,\vec{k}_s')  \bigg]^{-1} \\
+f(\vec{k}_s,\vec{k}_s')&=&F_2(-\vec{k}_s,\vec{k}_s+\vec{k}_s')P_s(k_s)+F_2(-\vec{k}_s',\vec{k}_s+\vec{k}_s')P_s(k_s') \\
+g(\vec{k}_{s_1},\vec{k}_{s_1}')&=&\frac{f(\vec{k}_{s_1},\vec{k}_{s_1}')}{2P_s(k_{s_1})P_s(k_{s_1}')}
+\end{eqnarray}
+And $F_2$ is a known function with pre-determined mathematical expression. The goal of our project is try to use data from N-Body simulation and compute the value of the quadratic estimator from it. After comparison to direct data from N-Body simulation, we can further determine if this hypothesis is correct.\\
+What we have done on our own laptop is to use Rockstar Halo position and mass to reproduce long wavelength modes, however, what we can see here is that, despite we have a decent signal-to-noise, there's a factor of 2 difference which we could not understand. So we want to try with mass particle position data instead of Halo position data and see if it works. \\
+\Spng{nbody}{Reproducing long wavelength modes from small wavelength modes using Rockstar data.}
+
 
 \section{Proposed Computational Methods}
 \subsection{DES Chains}
 Andresa,1 page
 \subsection{Anisotropic Clustering on Simulations}
-Peikai, 1 page
+I will basically download and read N-Body simulation data from \url{https://www.cosmosim.org}; precisely, we will need to use positions of approximately $1/100$ particles from HugeMDPL simulation at a snapshot of redshift $z=0$, which is a N-Body simulation with Planck cosmology, box size $4000 \, \rm  Mpc/h$ and $4096^3$ particles in total. Since the overall dataset is too large and we only need to use a fraction of it, my main goal is to download part of the data we need from this website and save to our own text format.
 
 
 \section{Proposed Analyses and Justification of Requested Resources}
