@@ -188,8 +188,21 @@ The second thrust is to explore the idea of inferring information about the larg
 
 \section{Progress to Date and Motivation for Future Work}
 
+
+
+
 \subsection{DES Chains}
-Andresa,1 page
+
+In the results of the first year of observations of The Dark Energy Survey (DES) \cite{desy1}, we combined data from galaxy clustering, cosmic shear and their cross-correlation, galaxy-galaxy lensing (3x2-point correlations), and showed the potential power of combining these different cosmological probes to constrain cosmology. Recently, we took this approach one step further by combining these data also with Type Ia supernova lightcurves and the baryon acoustic oscillation feature, both also measured by DES \cite{multiprobe}. From this multi-probe approach, we are able to rule out a Universe with no dark energy using data only from DES\cite{multiprobe}. 
+
+Currently, several large photometric surveys are capable of independently combining multiple cosmic probes and, over the following decade, new generation surveys, such as the  Large  Synoptic  Survey  Telescope (LSST), will provide powerful constraints on the distance-redshift relation and the growth of structure. The union of these results is expected to have huge constraining power, being able to provide us with the necessary insights to understand nature of dark energy.
+
+One crucial aspect of this approach is the ability of evaluating whether all data being used together is consistent, i.e. there is no tension between the datasets. It includes both different probes from a single experiment and data from different experiments. This is especially relevant in the case in which the experiments being combined are measuring very different features, e.g. the Cosmic Microwave Background (CMB) measures properties of the Universe only  $400,000$  years after the  Big  Bang, while photometric surveys measure the Large Scale Structure (LSS) of the Universe after dark energy has already dominated.
+
+The Tensions project is an effort to investigate the question of consistency between different datasets more deeply. We generated simulated DES data and are using it to quantify how well metrics commonly used for measuring concordance and discordance between datasets, e.g. Bayesian Evidence Ratio, can identify existing tensions. In order to get a better understanding of what do the results of a tension metric evaluation mean in terms of the values of cosmological parameters, we generated a set of simulated DES data-vectors. One of this data-vectors was built to have exactly the same cosmology as the one recovered from Planck data, while the others contain $1\sigma$ to $5\sigma$ shifts in the two main parameters measured by DES, the total matter density, $\Omega_m$, and the amplitude of the matter power spectrum at a scale of $8h^{-1}$Mpc, $\sigma_8$. By knowing the amount of tension each one of these data-vectors contain with respect to our baseline cosmology, we are able to evaluate quantitatively the performance of different tension metrics in identifying these tensions.
+
+
+
 \subsection{Anisotropic Clustering on Simulations}
 We try to use small wavelength modes to detect long wavelength modes starting from perturbation theory:
 \begin{eqnarray}
@@ -212,7 +225,19 @@ What we have done on our own laptop is to use Rockstar Halo position and mass to
 
 \section{Proposed Computational Methods}
 \subsection{DES Chains}
-Andresa,1 page
+
+We used the {\tt cosmosis} framework to run the Planck 2015 likelihood and get the value of the cosmological parameters that best-fit the $\Lambda$CDM model according to Planck data. This cosmology was used to generate a baseline simulated data-vector, corresponding to a 3x2pt DES data-vector, containing the galaxy clustering, cosmic shear and galaxy-galaxy lensing information that would be measured by DES, but with the cosmology ensured to be the same as the one measured by Planck, such that the two experiments completely agree, see Figure \ref{figure1}. Then, we generated simulated data-vectors with $1\sigma$ to $5\sigma$ shifts in $\Omega_m$ and $\sigma_8$ parameters. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[height=12cm]{des+planck_poly2D.png}
+\end{center}
+ \caption{Posterior of Planck likelihood, red, DES 3x2pt simulated data, blue, and the combination of Planck and DES, green.}
+\label{figure1}
+\end{figure}
+
+We are on the stage in which these simulated data-vectors then need to be run through the DES 3x2pt pipeline and through the combined DES+Planck pipeline to obtain the posterior and estimate the evidence in each case. 
+
 \subsection{Anisotropic Clustering on Simulations}
 I will basically download and read N-Body simulation data from \url{https://www.cosmosim.org}; precisely, we will need to use positions of approximately $1/100$ particles from HugeMDPL simulation at a snapshot of redshift $z=0$, which is a N-Body simulation with Planck cosmology, box size $4000 \, \rm  Mpc/h$ and $4096^3$ particles in total. Since the overall dataset is too large and we only need to use a fraction of it, my main goal is to download part of the data we need from this website and save to our own text format. We will simply use readgadget function from python package and select certain columns of data (position data) we need every 100 rows and save to three text files restoring x, y and z position respectively. Once we have these three files, we can do the rest computation on our own laptop.\\
 The overall data of snapshot $z=0$ has a size of $1.7$ Tb. The Leibniz-Institute for Astrophysics Potsdam in collaboration with the MultiDark consortium created the MultiDark Database including HugeMDPL. Format of the files is gadget binary file. \\
