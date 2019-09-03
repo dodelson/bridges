@@ -225,6 +225,9 @@ Gravity acts to bring matter together since it is an attractive force. Early on 
 \delta(\vec x) \equiv \frac{\rho(\vec x) - \bar\rho}{\bar\rho}.\ee
 This dimensionless over-density begins much less than one everywhere and gradually grows to become very non-uniform, with values ranging from $-1$ up to $10^{30}$ or even larger. This evolution to nonlinearity can be studied, on large scales, using perturbation theory in Fourier space.
 
+\Spng{nbody}{The ratio of long wavelength modes inferred from the quadratic estimator of \ec{quad} to the actual values of these modes. In both cases, we use the same catalog from an N-Body simulation. The fairly sharp peak indicates that the estimator has large signal to noise. The fact that the peak is at a ratio of 2 instead of one indicates that more care must be taken relating items in the catalog to mass. For that purpose, we need to access the raw data from the simulation, which can be done only with the computing power requested in this proposal.}
+
+
 Perturbation theory makes an interesting prediction about the first-order correction to linear evolution. For a short wavelength mode $\delta(\vec{k}_s)$, this first nonlinear contribution can be shown to be~\cite{Bernardeau:2001qr} equal to 
 \begin{eqnarray}
 \delta^{(2)}(\vec{k}_s)=\int\frac{d^{3}\vec{k}_l}{(2 \pi)^3}F_2(\vec{k}_s-\vec{k}_l,\vec{k}_l)\delta_{s}^{(1)}(\vec{k}_s-\vec{k}_l)\delta_l^{(1)}(\vec{k}_l)\eql{pert}
@@ -247,9 +250,9 @@ where $P(k)$ is the linear power spectrum of matter.
 \ec{quad} is remarkable in that it empowers us to learn about the universe on large scales by measuring perturbations on small scales. 
 The goal of our project is to use data from N-Body simulations, which captures all nonlinear effects, and compute the value of the quadratic estimator from it. After comparison to direct data from the N-Body simulation, we can further determine if this hypothesis is correct and can be applied to surveys.
 
-\Spng{nbody}{The ratio of long wavelength modes inferred from the quadratic estimator of \ec{quad} to the actual values of these modes. In both cases, we use the same catalog from an N-Body simulation. The fairly sharp peak indicates that the estimator has large signal to noise. The fact that the peak is at a ratio of 2 instead of one indicates that more care must be taken relating items in the catalog to mass. For that purpose, we need to access the raw data from the simulation, which can be done only with the computing power requested in this proposal.}
 
-To date, we have been limited by computational power. On our laptop, we used a catalog produced by Rockstar Halo~\cite{2013ApJ...762..109B} finder based on an underlying N-Body simulation. The results are shown in Fig.~\rf{nbody}. position and mass to reproduce long wavelength modes, however, what we can see here is that, despite we have a decent signal-to-noise, there's a factor of 2 difference which we could not understand. So we want to try with mass particle position data instead of Halo position data and see if it works. \\
+To date, we have been limited by computational power. On our laptop, we used a catalog produced by Rockstar Halo~\cite{2013ApJ...762..109B} finder based on an underlying N-Body simulation. The results are shown in Fig.~\rf{nbody}. While the signal to noise is apparently quite large, there is a factor of 2 difference between the estimated modes and their true values. This is very likely due to our assumption that the catalog objects have uniform mass. It is imperative therefore that we analyze the raw N-Body data itself.
+%So we want to try with mass particle position data instead of Halo position data and see if it works. \\
 
 
 \section{Proposed Computational Methods}
