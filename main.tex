@@ -271,12 +271,27 @@ We used the {\tt cosmosis} framework to run the Planck 2015 likelihood and get t
 We are on the stage in which these simulated data-vectors then need to be run through the DES 3x2pt pipeline and through the combined DES+Planck pipeline to obtain the posterior and estimate the evidence in each case. 
 
 \subsection{Anisotropic Clustering on Simulations}
+{\bf Scott: "We want to propose that we will run on the full N-Body data set, so give the full disk and memory requirements."}
+
 I will basically download and read N-Body simulation data from \url{https://www.cosmosim.org}; precisely, we will need to use positions of approximately $1/100$ particles from HugeMDPL simulation at a snapshot of redshift $z=0$, which is a N-Body simulation with Planck cosmology, box size $4000 \, \rm  Mpc/h$ and $4096^3$ particles in total. Since the overall dataset is too large and we only need to use a fraction of it, my main goal is to download part of the data we need from this website and save to our own text format. We will simply use readgadget function from python package and select certain columns of data (position data) we need every 100 rows and save to three text files restoring x, y and z position respectively. Once we have these three files, we can do the rest computation on our own laptop.\\
 The overall data of snapshot $z=0$ has a size of $1.7$ Tb. The Leibniz-Institute for Astrophysics Potsdam in collaboration with the MultiDark consortium created the MultiDark Database including HugeMDPL. Format of the files is gadget binary file. \\
 We will use $wget$ to download these files. I am a registered user of \url{https://www.cosmosim.org} so I have the permission to download these data, and if we can form a paper out of these data, we will cite Klypin A., Yepes G., Gottl{\"o}ber S., Prada F., He{\ss} S., 2016, MNRAS, 457, 4340 and give credits to this database.
 
 
 \section{Proposed Analyses and Justification of Requested Resources}
+
+The analyses described in the previous sections can be summarized as:
+\begin{enumerate}
+\item MCMC chains for the DES-Y3 tensions paper
+\item MCMC chains for the DES-Y3 data, key project paper
+\item Quadratic estimator applied to large N-Body simulations
+\end{enumerate}
+The first two of these will be an integral part of the DES Year 3 data and science release, within the next six months. The last will lead to a paper or two over the same time scale and then -- if successful -- forge the way for analyses on real data.
+
+The most time consuming chains for both 1 and 2 are those that analyze several data sets, especially Planck and DES. These chains can require up to 30,000 CPU hours. For 1, we must run at least ten of them (one for each of the ten simulated data sets shifted by x$sigma$ in one of two parameters). For 2, we expect to run about twice that many, accounting for different cosmological models that need to be run and different combinations of data sets (e.g., DES+Planck, DES lensing only+Planck, DES+non-CMB external experiment, $\ldots$). Therefore, we are hoping that 1M SU's will be sufficient; indeed, this is what the PI ran through at Chicago for the Y1 analysis.
+
+The third project requires much CPU hours, but disk space beyond the range of local machines and memory to store and analyze the simulations.
+
 
 \section{Computational Resources}
 
