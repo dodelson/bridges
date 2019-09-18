@@ -298,6 +298,51 @@ The most time consuming chains for both 1 and 2 are those that analyze several d
 The third project requires much CPU hours, but disk space beyond the range of local machines and memory to store and analyze the simulations.
 
 
+\begin{table}[h!]
+\begin{center}
+%\setlength{\extrarowheight}{7pt}
+  %\resizebox{\columnwidth}{!}{
+\begin{tabular}{c|cc|c}
+%\hline
+ Chain         & $\#$ Cores &  Time & CPU-hours   \\ 
+\hline
+%\hline
+%Baseline & $7.72$ & Strong Consistence & $0.81$ \\ 
+DES only baseline & $128$ & $60$h & $7680$  \\  
+DES + Planck baseline & $128$ & $120$h & $15360$  \\  
+\hline
+DES only $\sigma_8$ - $1\sigma$ & $128$ & $60$h & $7680$  \\ 
+DES only $\sigma_8$ - $2\sigma$ & $128$ & $60$h & $7680$  \\ 
+DES only $\sigma_8$ - $3\sigma$ & $128$ & $60$h & $7680$  \\ 
+DES only $\sigma_8$ - $4\sigma$ & $128$ & $60$h & $7680$  \\ 
+DES only $\sigma_8$ - $5\sigma$ & $128$ & $60$h & $7680$  \\   
+DES only $\Omega_m$ - $1\sigma$ & $128$ & $60$h & $7680$  \\  
+DES only $\Omega_m$ - $2\sigma$ & $128$ & $60$h & $7680$  \\ 
+DES only $\Omega_m$ - $3\sigma$ & $128$ & $60$h & $7680$  \\   
+DES only $\Omega_m$ - $4\sigma$ & $128$ & $60$h & $7680$  \\ 
+DES only $\Omega_m$ - $5\sigma$ & $128$ & $60$h & $7680$  \\ 
+
+\hline
+DES + Planck  $\sigma_8$ - $1\sigma$ & $128$ & $120$h & $15360$  \\ 
+DES + Planck  $\sigma_8$ - $2\sigma$ & $128$ & $120$h & $15360$  \\ 
+DES + Planck  $\sigma_8$ - $3\sigma$ & $128$ & $120$h & $15360$  \\ 
+DES + Planck  $\sigma_8$ - $4\sigma$ & $128$ & $120$h & $15360$  \\ 
+DES + Planck  $\sigma_8$ - $5\sigma$ & $128$ & $120$h & $15360$  \\  
+DES + Planck $\Omega_m$ - $1\sigma$ & $128$ & $120$h & $15360$  \\  
+DES + Planck  $\Omega_m$ - $2\sigma$ & $128$ & $120$h & $15360$  \\ 
+DES + Planck  $\Omega_m$ - $3\sigma$ & $128$ & $120$h & $15360$  \\   
+DES + Planck  $\Omega_m$ - $4\sigma$ & $128$ & $120$h & $15360$  \\ 
+DES + Planck  $\Omega_m$ - $5\sigma$ & $128$ & $120$h & $15360$  \\ 
+\hline
+ & &  & Total: \\ 
+\end{tabular}
+%}
+\caption{Chains to be run. (needs to include the DES chains for the Y3KP )}
+\label{tab:post}
+\end{center}
+\end{table}
+
+
 \section{Computational Resources}
 
 The Dark Energy Survey collaboration have access to computing time on NERSC. The total allocation is 30,000,000 CPU-hours for the use of the entire collaboration, with a  limit of 900,000 CPU-hours per user. So far, all the  progress that has been done in the tensions project was achieved running chains at NERSC, but keep using this machine for
