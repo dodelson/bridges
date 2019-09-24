@@ -230,15 +230,15 @@ This dimensionless over-density begins much less than one everywhere and gradual
 
 Perturbation theory makes an interesting prediction about the first-order correction to linear evolution. For a short wavelength mode $\delta(\vec{k}_s)$, this first nonlinear contribution can be shown to be~\cite{Bernardeau:2001qr} equal to 
 \begin{eqnarray}
-\delta^{(2)}(\vec{k}_s)=\int\frac{d^{3}\vec{k}_l}{(2 \pi)^3}F_2(\vec{k}_s-\vec{k}_l,\vec{k}_l)\delta_{s}^{(1)}(\vec{k}_s-\vec{k}_l)\delta_l^{(1)}(\vec{k}_l)\eql{pert}
+\delta^{(2)}(\vec{k}_s)=\int\frac{d^{3}\vec{k}_l}{(2 \pi)^3}F_2(\vec{k}_s-\vec{k}_l,\vec{k}_l)\delta^{(1)}(\vec{k}_s-\vec{k}_l)\delta^{(1)}(\vec{k}_l)\eql{pert}
 \end{eqnarray}
-where the upper-subscript means the order of perturbation theory and $F_2$ is a known function of its arguments. Note that the second order contribution to the small wavelength modes are determined by a convolution of the product of a small and large wavelength mode. 
+where the upper-subscript means the order of perturbation theory and $F_2$ is a known function of its arguments. Note that the second order contribution to the small wavelength modes is determined by a convolution of the product of a small and large wavelength mode. 
 This arises physically because small structure structure varies depending on the large scale environment in which it resides. \ec{pert} has the exact same form as the impact that the gravitational field has on the temperature field of the CMB, an effect called \emph{CMB lensing}. That effect has been exploited and measured by forming \emph{quadratic estimators} of the temperature fields to infer the large scale modes of the gravitational field responsible for the lensing~\cite{Hu:2001tn}.
 Similar to the CMB lensing case, we can construct a quadratic estimator in this case:
 \begin{eqnarray}
-\hat{\delta}_l^{(1)}(\vec{k}_l)=A(\vec{k}_l)\int \frac{d^3 \vec{k}_s}{(2\pi)^3} g(\vec{k}_s,\vec{k}_s')\delta_s(\vec{k}_s)\delta_s(\vec{k}_s')\eql{quad}
+\hat{\delta}^{(1)}(\vec{k}_l)=A(\vec{k}_l)\int \frac{d^3 \vec{k}_s}{(2\pi)^3} g(\vec{k}_s,\vec{k}_s')\delta(\vec{k}_s)\delta(\vec{k}_s')\eql{quad}
 \end{eqnarray}
-with $g$ being a weighting function, $\vec{k}_s'=\vec{k}_l-\vec{k}_s$ and $A$ is defined to require that the expectation value of the estimator $\langle \hat{\delta}_l^{(1)}(\vec{k}_l) \rangle=\hat{\delta}_l^{(1)}(\vec{k}_l)$, the actual long wavelength mode. These functions then are determined to be:
+with $g$ being a weighting function, $\vec{k}_s'=\vec{k}_l-\vec{k}_s$ and $A$ is defined to require that the expectation value of the estimator $\langle \hat{\delta}^{(1)}(\vec{k}_l) \rangle=\hat{\delta}^{(1)}(\vec{k}_l)$, the actual long wavelength mode. These functions then are determined to be:
 \begin{eqnarray}
 A(\vec{k}_l)&=&\bigg[\int \frac{d^3 \vec{k}_s}{(2\pi)^3} g(\vec{k}_s,\vec{k}_s')f(\vec{k}_s,\vec{k}_s')  \bigg]^{-1} \\
 f(\vec{k}_s,\vec{k}_s')&=&F_2(-\vec{k}_s,\vec{k}_s+\vec{k}_s')P(k_s)+F_2(-\vec{k}_s',\vec{k}_s+\vec{k}_s')P(k_s') \\
@@ -248,10 +248,10 @@ where $P(k)$ is the linear power spectrum of matter.
 %And $F_2$ is a known function with pre-determined mathematical expression. 
 
 \ec{quad} is remarkable in that it empowers us to learn about the universe on large scales by measuring perturbations on small scales. 
-The goal of our project is to use data from N-Body simulations, which captures all nonlinear effects, and compute the value of the quadratic estimator from it. After comparison to direct data from the N-Body simulation, we can further determine if this hypothesis is correct and can be applied to surveys.
+The goal of our project is to use data from N-Body simulations, which captures all nonlinear effects, and compute the value of the quadratic estimator from it. After comparison to direct data from the N-Body simulation, we can further determine if this hypothesis is correct and can be applied to surveys. Confirmation on N-Body data will free us up to apply this to real survey data, with the potential to transform the way that large surveys are analyzed.
 
 
-To date, we have been limited by computational power. On our laptop, we used a catalog produced by Rockstar Halo~\cite{2013ApJ...762..109B} finder based on an underlying N-Body simulation. The results are shown in Fig.~\rf{nbody}. While the signal to noise is apparently quite large, there is a factor of 2 difference between the estimated modes and their true values. This is very likely due to our assumption that the catalog objects have uniform mass. It is imperative therefore that we analyze the raw N-Body data itself.
+To date, we have been limited by computational power. On our laptop, we used a catalog produced by the Rockstar Halo~\cite{2013ApJ...762..109B} finder based on an underlying N-Body simulation. The results are shown in Fig.~\rf{nbody}. While the signal to noise is apparently quite large, there is a factor of 2 difference between the estimated modes and their true values. This is very likely due to our use of the catalog of objects produced from the underlying simulation instead of using the raw simulation data itself. It is imperative therefore that we analyze the raw N-Body data itself.
 %So we want to try with mass particle position data instead of Halo position data and see if it works. \\
 
 
@@ -278,9 +278,12 @@ The next step is run these simulated data-vectors in combination with the Planck
 %We are on the stage in which these simulated data-vectors then need to be run through the DES 3x2pt pipeline and through the combined DES+Planck pipeline to obtain the posterior and estimate the evidence in each case. 
 
 \subsection{Anisotropic Clustering on Simulations}
-We would like to download and read N-Body simulation data from \url{https://www.cosmosim.org}; precisely, we will need to use positions of approximately $1/100$ particles from HugeMDPL simulation at a snapshot of redshift $z=0$, which is a N-Body simulation with Planck cosmology, box size $4000 \, \rm  Mpc/h$ and $4096^3$ particles in total. Our main goal is to download part of the data we need from this website and save to our own text format. We will simply use readgadget function from python package to read these files and extract useful data we need. Then we will do a Fast Fourier Transform into a mesh with $1280^3$ cells, so we require full disk and memory.\\
-The overall data of snapshot $z=0$ has a size of $1.7$ Tb. The Leibniz-Institute for Astrophysics Potsdam in collaboration with the MultiDark consortium created the MultiDark Database including HugeMDPL. Format of the files is gadget binary file. \\
-We will use $wget$ to download these files. I am a registered user of \url{https://www.cosmosim.org} so I have the permission to download these data, and if we can form a paper out of these data, we will cite~\cite{Klypin:2016kl} and give credits to this database.
+We would like to download and analyze all the N-Body simulation data from \url{https://www.cosmosim.org}; precisely, we will need to use positions of of all $4096^3$ particles from the HugeMDPL simulation at a snapshot of redshift $z=0$. 
+%which is a N-Body simulation with Planck cosmology, box size $4000 \, \rm  Mpc/h$ and particles in total. 
+We will simply use the readgadget function from a python package to read these files and extract useful data we need. Then we will do a Fast Fourier Transform into a mesh with $1280^3$ cells, so we require enough memory and disk space to store 1.7 TBytes of data.\\
+%The overall data of snapshot $z=0$ has a size of $1.7$ Tb. 
+The Leibniz-Institute for Astrophysics Potsdam in collaboration with the MultiDark consortium created the MultiDark Database including HugeMDPL. Format of the files is gadget binary file. \\
+We will use $wget$ to download these files. Li am a registered user of \url{https://www.cosmosim.org} so has the permission to download these data. Using 1\% of the data so far has given us a sense of the analyses that will need to be run, and we have written most of the software necessary to test this idea of extracting large scale information from small scale data. Note that only a large box with excellent resolution will suffice to test this idea, because the large scale modes and their influence on small scales must be tracked simultaneously.% and if we can form a paper out of these data, we will cite~\cite{Klypin:2016kl} and give credits to this database.
 
 
 \section{Proposed Analyses and Justification of Requested Resources}
@@ -293,7 +296,7 @@ The analyses described in the previous sections can be summarized as:
 \end{enumerate}
 The first two of these will be an integral part of the DES Year 3 data and science release, within the next six months. The last will lead to a paper or two over the same time scale and then -- if successful -- forge the way for analyses on real data.
 
-The most time consuming chains for both 1 and 2 are those that analyze several data sets, especially Planck and DES. These chains can require up to 30,000 CPU hours. For 1, we must run at least ten of them (one for each of the ten simulated data sets shifted by x$sigma$ in one of two parameters). For 2, we expect to run about twice that many, accounting for different cosmological models that need to be run and different combinations of data sets (e.g., DES+Planck, DES lensing only+Planck, DES+non-CMB external experiment, $\ldots$). Therefore, we are hoping that 1M SU's will be sufficient; indeed, this is what the PI ran through at Chicago for the Y1 analysis.
+The most time consuming chains for both 1 and 2 are those that analyze several data sets, especially Planck and DES. These chains can require up to 30,000 CPU hours. For 1, we must run at least ten of them (one for each of the ten simulated data sets shifted by x$\sigma$ in one of two parameters). For 2, we expect to run about twice that many, accounting for different cosmological models that need to be run and different combinations of data sets (for example, within DES, there are 3 separate data vectors and we need to check their consistency so run with different subsets). Therefore, we are hoping that 1M SU's will be sufficient; indeed, this is what the PI ran through at Chicago for the Y1 analysis.
 
 The third project requires much CPU hours, but disk space beyond the range of local machines and memory to store and analyze the simulations.
 
@@ -310,34 +313,20 @@ The third project requires much CPU hours, but disk space beyond the range of lo
 %Baseline & $7.72$ & Strong Consistence & $0.81$ \\ 
 DES only baseline & $128$ & $60$h & $7680$  \\  
 DES + Planck baseline & $128$ & $120$h & $15360$  \\  
+%\hline
+DES only $\sigma_8$ - $1,2,3,4,5\sigma$ & $128$ & $5\times60$h & $5\times7680$  \\ 
+DES only $\Omega_m$ - $1,2,3,4,5\sigma$ & $128$ & $5\times60$h & $5\times7680$  \\  
+%\hline
+DES + Planck  $\sigma_8$ - $1,2,3,4,5\sigma$ & $128$ & $5\times120$h & $5\times15360$  \\ 
+DES + Planck $\Omega_m$ - $1,2,3,4,5\sigma$ & $128$ & $5\times120$h & $5\times15360$  \\  
 \hline
-DES only $\sigma_8$ - $1\sigma$ & $128$ & $60$h & $7680$  \\ 
-DES only $\sigma_8$ - $2\sigma$ & $128$ & $60$h & $7680$  \\ 
-DES only $\sigma_8$ - $3\sigma$ & $128$ & $60$h & $7680$  \\ 
-DES only $\sigma_8$ - $4\sigma$ & $128$ & $60$h & $7680$  \\ 
-DES only $\sigma_8$ - $5\sigma$ & $128$ & $60$h & $7680$  \\   
-DES only $\Omega_m$ - $1\sigma$ & $128$ & $60$h & $7680$  \\  
-DES only $\Omega_m$ - $2\sigma$ & $128$ & $60$h & $7680$  \\ 
-DES only $\Omega_m$ - $3\sigma$ & $128$ & $60$h & $7680$  \\   
-DES only $\Omega_m$ - $4\sigma$ & $128$ & $60$h & $7680$  \\ 
-DES only $\Omega_m$ - $5\sigma$ & $128$ & $60$h & $7680$  \\ 
-
+ 50-DES only runs & $128$ & $100\times60$h & $100\times7680$  \\  
+ 20-DES+External Data runs & $128$ & $20\times120$h & $20\times15360$  \\  
 \hline
-DES + Planck  $\sigma_8$ - $1\sigma$ & $128$ & $120$h & $15360$  \\ 
-DES + Planck  $\sigma_8$ - $2\sigma$ & $128$ & $120$h & $15360$  \\ 
-DES + Planck  $\sigma_8$ - $3\sigma$ & $128$ & $120$h & $15360$  \\ 
-DES + Planck  $\sigma_8$ - $4\sigma$ & $128$ & $120$h & $15360$  \\ 
-DES + Planck  $\sigma_8$ - $5\sigma$ & $128$ & $120$h & $15360$  \\  
-DES + Planck $\Omega_m$ - $1\sigma$ & $128$ & $120$h & $15360$  \\  
-DES + Planck  $\Omega_m$ - $2\sigma$ & $128$ & $120$h & $15360$  \\ 
-DES + Planck  $\Omega_m$ - $3\sigma$ & $128$ & $120$h & $15360$  \\   
-DES + Planck  $\Omega_m$ - $4\sigma$ & $128$ & $120$h & $15360$  \\ 
-DES + Planck  $\Omega_m$ - $5\sigma$ & $128$ & $120$h & $15360$  \\ 
-\hline
- & &  & Total: \\ 
+& &  & Total: 944,640\\ 
 \end{tabular}
 %}
-\caption{Chains to be run. (needs to include the DES chains for the Y3KP )}
+\caption{Markov Chain Monte Carlos to be run on DES data and simulations. The first block, above the horizontal line, is for the tensions project and requires multinest chains to be run on 10 sets of simulated DES data, each generated from a cosmology offset from the baseline by $1,2,\ldots,5-\sigma$ in either the parameter $\Omega_m$ or $\sigma_8$. Each of these simulated data sets will also need to be re-run on DES data combined with external data from the Planck satellite. The block of runs below the line mimics that required to complete the Y1 DES analysis. Of order fifty chains will be needed from start to finish on different subsets of the data and using different models. Then, production runs will be required including several dozen on DES data combined with other external data sets.}
 \label{tab:post}
 \end{center}
 \end{table}
@@ -345,12 +334,16 @@ DES + Planck  $\Omega_m$ - $5\sigma$ & $128$ & $120$h & $15360$  \\
 
 \section{Computational Resources}
 
-The Dark Energy Survey collaboration have access to computing time on NERSC. The total allocation is 30,000,000 CPU-hours for the use of the entire collaboration, with a  limit of 900,000 CPU-hours per user. So far, all the  progress that has been done in the tensions project was achieved running chains at NERSC, but keep using this machine for
-completing this project is problematic due to two main reasons. First, the amount of CPU-hours that are still available for the student, approximately 50,000, is not enough to conclude the project . The second issue is the the long waiting time for the jobs to start. Since this resource is shared by the 400 collaboration members, the queue time for a job to start has been approximately 4 days. In principle, the tensions project must be concluded before the final analysis of Y3 data starts, since it will dictates how to perform it consistently, which implies we are very time constrained and need it to be concluded as soon as possible.
+The Dark Energy Survey collaboration has access to computing time at the National Energy Research Scientific Computing Center (NERSC). The total allocation is 30,000,000 CPU-hours for the use of the entire collaboration, with a  limit of 900,000 CPU-hours per user. So far, the progress that has been made on the tensions project was achieved running chains at NERSC, but this progress has been slow because of the long wait times. The typical queue time for a job to start has been approximately 4 days, and there have been downtimes stretching to weeks. The amount of CPU-hours remaining for Campos, approximately 50,000, is not enough to conclude the project . The tensions runs must be concluded before the final analysis of Y3 data starts, within the next two months. Without the resources we are seeking here, we will not be able to conclude the runs required for this project.
+
 
 
 
 \section{Research Plan}
+
+The first two sets of runs, those outlined in the Table, will be carried out aligned with the effort of the full DES collaboration. Therefore, these will be run over the ensuing three months by the end of the calendar year.
+
+The other project, whose analyses are not as well-defined and currently appear smaller in scope than the first two sets, is a longer-term project. The initial N-Body analysis requires only sufficient memory and little CPU time. However, over the course of the coming 12 months, this project may well evolve into a primary research activity. Given the relatively high risk-high reward nature of this project, it is difficult to describe in more details the plans for this project.
 
 \section{Grant Support}
 
