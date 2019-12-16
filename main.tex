@@ -273,7 +273,7 @@ The simulated data is composed by galaxy clustering, cosmic shear and galaxy-gal
 \label{figure1}
 \end{figure}
 
-The next step is run these simulated data-vectors in combination with the Planck likelihood to perform the combined DES+Planck analysis. There are a total of 10 chains to be run in order to finalize the project which investigate the performance of the tension metrics, and each of these runs take of order 120 hours using 128 cores, corresponding to approximately 15,000 Core hours per run.
+The next step is run these simulated data-vectors in combination with the Planck likelihood to perform the combined DES+Planck analysis. There are a total of 10 chains to be run in order to finalize the project which investigate the performance of the tension metrics, and each of these runs take of order 200 hours using 128 cores, corresponding to approximately 15,000 Core hours per run.
 
 %We are on the stage in which these simulated data-vectors then need to be run through the DES 3x2pt pipeline and through the combined DES+Planck pipeline to obtain the posterior and estimate the evidence in each case. 
 
@@ -301,7 +301,7 @@ The most time consuming chains for both 1 and 2 are those that analyze several d
 The third project requires fewer Core hours, at least at the outset, but much more disk space to store large data sets, first from simulations and then eventually from survey data. 
 %disk space beyond the range of local machines and memory to store and analyze the simulations.
 
-
+\begin{comment}
 \begin{table}[h!]
 \begin{center}
 %\setlength{\extrarowheight}{7pt}
@@ -327,6 +327,35 @@ DES + Planck $\Omega_m$ - $1,2,3,4,5\sigma$ & $128$ & $5\times120$h & $5\times15
 & &  & Total: 944,640\\ 
 \end{tabular}
 %}
+\end{comment}
+
+\begin{table}[h!]
+\begin{center}
+%\setlength{\extrarowheight}{7pt}
+  %\resizebox{\columnwidth}{!}{
+\begin{tabular}{c|cc|c}
+%\hline
+ Chain         & $\#$ Cores &  Time & Core-hours   \\ 
+\hline
+%\hline
+%Baseline & $7.72$ & Strong Consistence & $0.81$ \\ 
+DES only baseline & $128$ & $100$h & $12800$  \\  
+DES + Planck baseline & $128$ & $200$h & $25600$  \\  
+%\hline
+DES only $\sigma_8$ - $1,2,3,4,5\sigma$ & $128$ & $5\times100$h & $5\times12800$  \\ 
+DES only $\Omega_m$ - $1,2,3,4,5\sigma$ & $128$ & $5\times100$h & $5\times12800$  \\  
+%\hline
+DES + Planck  $\sigma_8$ - $1,2,3,4,5\sigma$ & $128$ & $5\times200$h & $5\times25600$  \\ 
+DES + Planck $\Omega_m$ - $1,2,3,4,5\sigma$ & $128$ & $5\times200$h & $5\times25600$  \\  
+\hline
+ 50-DES only runs & $128$ & $50\times100$h & $50\times12800$  \\  
+ 20-DES+External Data runs & $128$ & $20\times200$h & $20\times25600$  \\  
+\hline
+& &  & Total: 1 574 400\\ 
+\end{tabular}
+%}
+
+
 \caption{Markov Chain Monte Carlos to be run on DES data and simulations. The first block, above the horizontal line, is for the tensions project and requires multinest chains to be run on 10 sets of simulated DES data, each generated from a cosmology offset from the baseline by $1,2,\ldots,5-\sigma$ in either the parameter $\Omega_m$ or $\sigma_8$. Each of these simulated data sets will also need to be re-run on DES data combined with external data from the Planck satellite. The block of runs below the line mimics that required to complete the Y1 DES analysis. Of order fifty chains will be needed from start to finish on different subsets of the data and using different models. Then, production runs will be required including several dozen on DES data combined with other external data sets.}
 \label{tab:post}
 \end{center}
