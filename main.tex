@@ -160,7 +160,7 @@ Scott Dodelson (PI), Peikai Li, Andresa Rodrigues de Campos, John Urbanic, Tiank
 \begin{small}
 
 
-\section*{Summary} We request a total of 1M SU's on bridges for work analyzing data from the Dark Energy Survey and from large N-Body simulations.
+\section*{Summary} We request a total of 1,574,400 SU's on bridges for work analyzing data from the Dark Energy Survey and from large N-Body simulations.
 
 \section{Introduction and Scientific Background}
 
@@ -203,7 +203,7 @@ The second thrust is to explore the idea of inferring information about the larg
 In the results of the first year (Y1) of observations of The Dark Energy Survey (DES) \cite{Abbott:2017wau}, we combined data from galaxy clustering~\cite{Elvin-Poole:2017xsf}, cosmic shear~\cite{Troxel:2017xyo} and their cross-correlation, galaxy-galaxy lensing~\cite{Prat:2017goa}. The first of these is the traditional way of inferring information about the mass of the universe using astronomical surveys: assume that galaxies trace mass, measure the statistics of the galaxy distribution, and compare with the theoretical predictions for these statistics, again assuming that the galaxy statistics that are measured are related to the mass statistics that are theoretically predicted. The assumed relation is called \emph{bias}. The second observable measured was \emph{cosmic shear}, the correlation between the shapes of background galaxies. These are distorted by the intervening mass distribution, so cosmic shear offers a unique way to probe the mass distribution in the universe without assuming anything about bias. These two sets of statistics are supplemented by one that cross-correlates the two: the positions of the foreground galaxies with the shapes of background galaxies. In each case, the two-point function is measured and computed theoretically using \cosmosis. 
 
 
-The predictions depend on 26 different parameters, six that determine the cosmology and twenty other so-called ``nuisance'' parameters that are needed to quantify various astrophysical uncertainties. For example, nine parameters are needed to capture the uncertainty in how far away from us are all the galaxies used in the analysis. Computing the likelihood in this 26-dimensional space requires clever sampling techniques. For Y1, we used the {\tt multinest} sampler~\cite{Feroz:2008xx} running on the midway computing cluster at the University of Chicago. Each run took of order one day of clock time depending on the data sets used. Using 128 cores, this corresponds to between 1000-5000 Core hours per run. In total, we used 1 million Core hours for the Y1 analysis, corresponding to a few hundred runs. 
+The predictions depend on 26 different parameters, six that determine the cosmology and twenty other so-called ``nuisance'' parameters that are needed to quantify various astrophysical uncertainties. For example, nine parameters are needed to capture the uncertainty in how far away from us are all the galaxies used in the analysis. Computing the likelihood in this 26-dimensional space requires clever sampling techniques. For Y1, we used the {\tt multinest} sampler~\cite{Feroz:2008xx} running on the Midway computing cluster at the University of Chicago. Each run took of order one day of clock time depending on the data sets used. Using 128 cores, this corresponds to between 1000-5000 core-hours per run. In total, we used 1 million core-hours for the Y1 analysis, corresponding to a few hundred runs. 
 
 One of the most important goals of DES is to determine the consistency of what has become the concordance model of cosmology, so-called $\Lambda$CDM. This model is built on the assumption that the dark energy that contributes 70\% of the energy in the universe is a cosmological constant (the Greek letter $\Lambda$) with a value that is extraordinarily difficult to reconcile with our theoretical prejudices. As such, a large thrust is to stress-test $\Lambda$CDM. DES can do this by measuring some of the same parameters within $\Lambda$CDM that have already been pinned down precisely by another set of experiments, those that probe the universe at very early times, when the universe was only 400,000 years old. If the DES measurements are found to be inconsistent with the early-time measurements (cosmic microwave background or CMB), then $\Lambda$CDM will need to be replaced.
 
@@ -273,7 +273,7 @@ The simulated data is composed by galaxy clustering, cosmic shear and galaxy-gal
 \label{figure1}
 \end{figure}
 
-The next step is run these simulated data-vectors in combination with the Planck likelihood to perform the combined DES+Planck analysis. There are a total of 10 chains to be run in order to finalize the project which investigate the performance of the tension metrics, and each of these runs take of order 200 hours using 128 cores, corresponding to approximately 15,000 Core hours per run.
+The next step is run these simulated data-vectors in combination with the Planck likelihood to perform the combined DES+Planck analysis. There are a total of 10 chains to be run in order to finalize the project which investigate the performance of the tension metrics, and each of these runs take of order 200 hours using 128 cores, corresponding to approximately 15,000 core-hours per run.
 
 %We are on the stage in which these simulated data-vectors then need to be run through the DES 3x2pt pipeline and through the combined DES+Planck pipeline to obtain the posterior and estimate the evidence in each case. 
 
@@ -296,9 +296,9 @@ The analyses described in the previous sections can be summarized as:
 \end{enumerate}
 The first two of these will be an integral part of the DES Year 3 data and science release, within the next six months. The last will lead to a paper or two over the same time scale and then -- if successful -- forge the way for analyses on real data.
 
-The most time consuming chains for both 1 and 2 are those that analyze several data sets, especially Planck and DES. These chains can require up to 30,000 Core hours. For 1, we must run at least ten of them (one for each of the ten simulated data sets shifted by x$\sigma$ in one of two parameters). For 2, we expect to run about twice that many, accounting for different cosmological models that need to be run and different combinations of data sets (for example, within DES, there are 3 separate data vectors and we need to check their consistency so run with different subsets). Therefore, we are hoping that 1M SU's will be sufficient; indeed, this is what the PI ran through at Chicago for the Y1 analysis.
+The most time consuming chains for both 1 and 2 are those that analyze several data sets, especially Planck and DES. These chains can require up to 30,000 core-hours. For 1, we must run at least ten of them (one for each of the ten simulated data sets shifted by x$\sigma$ in one of two parameters). For 2, we expect to run about twice that many, accounting for different cosmological models that need to be run and different combinations of data sets (for example, within DES, there are 3 separate data vectors and we need to check their consistency so run with different subsets). Therefore, we are hoping that 1M SU's will be sufficient; indeed, this is what the PI ran through at Chicago for the Y1 analysis.
 
-The third project requires fewer Core hours, at least at the outset, but much more disk space to store large data sets, first from simulations and then eventually from survey data. 
+The third project requires fewer core-hours, at least at the outset, but much more disk space to store large data sets, first from simulations and then eventually from survey data. 
 %disk space beyond the range of local machines and memory to store and analyze the simulations.
 
 \begin{comment}
@@ -364,7 +364,7 @@ DES + Planck $\Omega_m$ - $1,2,3,4,5\sigma$ & $128$ & $5\times200$h & $5\times25
 
 \section{Computational Resources}
 
-The Dark Energy Survey collaboration has access to computing time at the National Energy Research Scientific Computing Center (NERSC). The total allocation is 30,000,000 Core-hours for the use of the entire collaboration, with a  limit of 900,000 Core-hours per user. So far, the progress that has been made on the tensions project was achieved running chains at NERSC, but this progress has been slow because of the long wait times. The typical queue time for a job to start has been approximately 4 days, and there have been downtimes stretching to weeks. The amount of Core-hours remaining for Campos, approximately 50,000, is not enough to conclude the project . The tensions runs must be concluded before the final analysis of Y3 data starts, within the next two months. Without the resources we are seeking here, we will not be able to conclude the runs required for this project.
+The Dark Energy Survey collaboration has access to computing time at the National Energy Research Scientific Computing Center (NERSC). The total allocation is 30,000,000 core-hours for the use of the entire collaboration, with a  limit of 900,000 core-hours per user. So far, the progress that has been made on the tensions project was achieved running chains at NERSC, but this progress has been slow because of the long wait times. The typical queue time for a job to start has been approximately 4 days, and there have been downtimes stretching to weeks. The amount of core-hours remaining for Campos, approximately 50,000, is not enough to conclude the project . The tensions runs must be concluded before the final analysis of Y3 data starts, within the next two months. Without the resources we are seeking here, we will not be able to conclude the runs required for this project.
 
 
 
@@ -383,7 +383,7 @@ The PI is supported by the U.S. Dept. of Energy contract DE-SC0019248 for the pr
 
 Our total request is:
 
-{\bf 1,000,000 SUs on Bridges}
+{\bf 1,574,400 SUs on Bridges}
 
 {\bf 10 TeraBtyes of storage}
 
