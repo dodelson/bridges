@@ -2,8 +2,8 @@
 
 \usepackage{epsfig}
 \usepackage{comment}
-\usepackage{natbib}
-\usepackage{natbibmnfix}
+%\usepackage{natbib}
+%\usepackage{h-physrev}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{subfig}
@@ -14,6 +14,7 @@
 \usepackage{wrapfig}
 \usepackage{lipsum}
 \usepackage{float}
+\usepackage{hyperref}
 %\usepackage{newcaptions} % changes the appearance of captions
 \usepackage{url}
 \usepackage{soul} % enables a better version of "\underline{}", called '\ul{}", which for instance permits linebreaks
@@ -172,34 +173,38 @@ Discoveries are hidden in previously unexplored domains. In the field of cosmolo
 
 We are fortunate to be living in a time when large surveys are capturing more and more parts of the sky. The Dark Energy Survey, for which the PI is the Co-Chair of the Science Committee, has surveyed one tenth of the sky out to redshifts $z>1$ (corresponding to distances billions of light years away when the universe was 8 billion years younger). The Large Synoptic Survey Telescope (LSST) will survey half of the sky every night and peer much deeper over its ten years of operations scheduled to begin in 2023. 
 
-At the same time, numerical simulations have improved so that even their data cannot be analyzed on local machines. Analysis on simulations of course is a prerequisite for any robust analysis on real data. As a result, state of the art analyses of surveys takes place at national computational centers.
+At the same time, numerical simulations have improved so that even their data cannot be analyzed on local machines. Analysis on simulations of course is a prerequisite for any robust analysis on real data. As a result, state of the art analyses of surveys take place at national computational centers.
 
 Our group is well-situated to make discoveries in this field because we can contribute:
 \begin{itemize}
 \item Leadership in current surveys
 \item Theoretical expertise
 \item Software Development
+\item Leadership in an NSF AI Planning Institute
 \item Resources at the PSC
 \end{itemize} 
-The PI led the effort to extract cosmology from DES using its first year of data, with fifteen papers submitted in 2017~(\cite{Abbott:2017wau} and references therein). There is a similar, although larger scale, effort \acampos{under completion} right now in which three times as much data was analysed, the largest cosmological data set of its kind ever explored. Our leadership in this endeavor \acampos{and the partnership with PSC has already resulted in several publications, as the DES Y3 Tensions paper~\cite{y3-tensions} for instance. The opportunity to keep this work going} is the backbone of this proposal and drives many of the requirements and requests. %We feel it is an opportunity for CMU and PSC to partner and be recognized for cutting edge work in cosmology. This will 
-\acampos{Our goal is to} lay the groundwork for CMU and PSC to continue their leadership during the next decade, the era of LSST.
+The PI led the effort to extract cosmology from DES using its first year of data, with fifteen papers submitted in 2017~(\cite{Abbott:2017wau} and references therein). There is a similar, although larger scale, effort now in which three times as much data was analysed (preliminary papers include , the largest cosmological data set of its kind ever explored. Our leadership in this endeavor and the partnership with PSC has already resulted in several publications~\cite{Hartley:2020euq,Lemos:2020jry,MacCrann:2020yhw,Friedrich:2020dqo,Myles:2020dyq}, with Campos co-leading the DES Y3 Tensions paper~\cite{y3-tensions} for instance. The opportunity to keep this work going is the backbone of this proposal and drives many of the requirements and requests. %We feel it is an opportunity for CMU and PSC to partner and be recognized for cutting edge work in cosmology. This will 
+Our goal is to lay the groundwork for CMU and PSC to continue their leadership during the next decade, the era of LSST.
 
-Besides our leadership in surveys, we have presented a number of innovative ideas for extracting information from surveys and indeed are funded by both the NSF and DOE to apply these ideas to simulations and surveys. Exploring these new ideas on simulations is the second main thrust of this proposal. Here, too, our long term goal is to partner with PSC to become established leaders in the field of large survey analysis. As these ideas become generally accepted, we will be in an excellent position to implement them on DES and LSST.
+Besides our leadership in surveys, we have presented a number of innovative ideas for extracting information from surveys and indeed are funded by both the NSF and DOE to apply these ideas to simulations and surveys. Exploring these new ideas on simulations is the second main thrust of this proposal. Here, too, our long term goal is to partner with PSC to become established leaders in the field of large survey analysis. As these ideas become generally accepted, we will be in an excellent position to implement them on DES and LSST. 
+
+The partnership between Physics and PSC has advanced in numerous ways over the past year. PSC now houses the full cosmology cluster, following significant investment by the Department and the College. Perhaps even more exciting is the funding of the \href{https://www.cmu.edu/ai-physics-institute/}{NSF AI Planning Institute for Data-Driven Discovery in Physics}. This is the sole CMU-based AI Institute that has been funded, and PI Dodelson serves as its Director. The Institute has already invested \$50k in resources that will be housed at the PSC and has PSC Staff member Urbanic as one of the co-I's and founding members. 
+
 \newcommand\cosmosis{{\tt cosmosis}}
 
-Finally, we led the development of {\tt cosmosis}~\cite{Zuntz:2014csq}, a software framework designed for cosmological analyses. A large part of our request is to run Markov Chain Monte Carlo (MCMC) simulations (as we did for the Year 1\acampos{, and now Year 3,} results) on DES data and simulations. This is a very low-risk high-reward program, as we are very familiar with the code base, and there is little development required. With the help of John Urbanic sitting in the Physics Department, we have been able to set up \cosmosis\ on several platforms and optimize it on bridges.
+Finally, we led the development of {\tt cosmosis}~\cite{Zuntz:2014csq}, a software framework designed for cosmological analyses. A large part of our request is to run Markov Chain Monte Carlo (MCMC) simulations (as we did for the Year 1 and now Year 3, results) on DES data and simulations. This is a very low-risk high-reward program, as we are very familiar with the code base, and there is little development required. With the help of John Urbanic sitting in the Physics Department, we have been able to set up \cosmosis\ on several platforms and optimize it on bridges.
 
 The goal of this proposal is to obtain the computational resources necessary to implement this program.
 
-Here we briefly outline the scope of the two main thrusts of this proposal, relegating details to later sections. First, we aim to contribute heavily to the DES Year \acampos{6 (Y6)} analysis (the \acampos {full six} years of data survey 5000 square degrees of the Southern Sky). DES is an international collaboration with over 500 members. The key project for \acampos{Y6} will result in close to 30 papers culminating in the key paper that will be alphabetically ordered, \acampos{similarly to Y3}. 
-Student Andresa Rodrigues de Campos \acampos{led} one of the {\it essential papers} \cite{y3-tensions} that will feed into the key Y3 paper, \acampos{and will be leading another essential project for Y6. Her current work on exploring models of intrinsic alignment of galaxies is a fundamental component of lensing survey analysis, being relevant not only for DES, but also for LSST.}
+Here we briefly outline the scope of the two main thrusts of this proposal, relegating details to later sections. First, we aim to contribute heavily to the DES Year 6 (Y6) analysis (the full six years of data survey 5000 square degrees of the Southern Sky). DES is an international collaboration with over 500 members. The key project for Y6 will result in close to 30 papers culminating in the key paper that will be alphabetically ordered, similarly to Y3. 
+Student Andresa Rodrigues de Campos led one of the {\it essential papers} \cite{y3-tensions} that will feed into the key Y3 paper, and will be leading another essential project for Y6. Her current work on exploring models of intrinsic alignment of galaxies is a fundamental component of lensing survey analysis, being relevant not only for DES, but also for LSST.
 
-\begin{comment}
+%\begin{comment}
 The second thrust is to explore the idea of inferring information about the largest wavelength perturbations in the universe by measuring small wavelength modes, exploiting the fact that the small-scale structure depends in a predictable way on the presence of long wavelength modes.
-\end{comment}
+%\end{comment}
 
 
-\peikai{In the field of cosmology, one of the most important observation we have is the cosmic microwave background (CMB)~\cite{Dodelson:2003ft}. CMB is the observation of photons from all directions when the universe is very young; i.e. CMB directly gives us the primordial picture of the whole universe when it was approximately 380,000 years old; moreover, CMB provides us with the tightest constraint of current cosmological parameters. CMB photons' trajectory would be distorted due to the gravitational force of the structures along line-of-sight. Theoretically by considering the distortion we can form an quadratic estimator to estimate the gravitational field using observed CMB information. Our goal in this project is trying to improve the performance of the estimation using machine learning techniques.}
+In addition, one of the most important observation we have is the cosmic microwave background (CMB)~\cite{Dodelson:2003ft}. CMB is the observation of photons from all directions when the universe is very young; i.e. CMB directly gives us the primordial picture of the whole universe when it was approximately 380,000 years old; moreover, CMB provides us with the tightest constraint of current cosmological parameters. CMB photons' trajectory would be distorted due to the gravitational force of the structures along line-of-sight. Theoretically by considering the distortion we can form a quadratic estimator to estimate the gravitational field using observed CMB information. Our goal in this project is trying to improve the performance of the estimate using machine learning techniques.
 
 \section{Progress to Date and Motivation for Future Work}
 
@@ -214,9 +219,9 @@ The predictions depend on 26 different parameters, six that determine the cosmol
 
 One of the most important goals of DES is to determine the consistency of what has become the concordance model of cosmology, so-called $\Lambda$CDM. This model is built on the assumption that the dark energy that contributes 70\% of the energy in the universe is a cosmological constant (the Greek letter $\Lambda$) with a value that is extraordinarily difficult to reconcile with our theoretical prejudices. As such, a large thrust is to stress-test $\Lambda$CDM. DES can do this by measuring some of the same parameters within $\Lambda$CDM that have already been pinned down precisely by another set of experiments, those that probe the universe at very early times, when the universe was only 400,000 years old. If the DES measurements are found to be inconsistent with the early-time measurements (cosmic microwave background or CMB), then $\Lambda$CDM will need to be replaced.
 
-\acampos{One crucial aspect of this approach is the ability to model our observables appropriately. Although, it is now well established that the weak lensing of distant galaxies by foreground mass provides a window onto the large scale structure of the Universe, the weak lensing signal is subject to a range of systematic effects. One particular source of systematic bias, which enters all of the weak lensing is the intrinsic alignment (IA) of galaxies, i.e., the distortion on the shapes of galaxies due to their local gravitational field.} 
+One crucial aspect of this approach is the ability to model our observables appropriately. Although, it is now well established that the weak lensing of distant galaxies by foreground mass provides a window onto the large scale structure of the Universe, the weak lensing signal is subject to a range of systematic effects. One particular source of systematic bias, which enters all of the weak lensing is the intrinsic alignment (IA) of galaxies, i.e., the distortion on the shapes of galaxies due to their local gravitational field.
 
-\acampos{In order to evaluate the robustness of our analysis to different models of IA, we generated simulated DES data-vectors assuming two possible models: Non-Linear Alignment (NLA) or Tidal Alignment + Tidal Torque (TATT). The NLA model can be obtained from the TATT model by fixing three parameters in the later, therefore it is a simpler and more broadly used model of IA. However, in the next sections we show evidence indicating that, depending on the scales we are probing, assuming the NLA model instead of the TATT can lead to a bias in the cosmological parameters.}   
+In order to evaluate the robustness of our analysis to different models of IA, we generated simulated DES data-vectors assuming two possible models: Non-Linear Alignment (NLA) or Tidal Alignment + Tidal Torque (TATT). The NLA model can be obtained from the TATT model by fixing three parameters in the later, therefore it is a simpler and more broadly used model of IA. However, in the next sections we show evidence indicating that, depending on the scales we are probing, assuming the NLA model instead of the TATT can lead to a bias in the cosmological parameters.  
 %
 % (3x2-point correlations), and showed the potential power of combining these different cosmological probes to constrain cosmology. Recently, we took this approach one step further by combining these data also with Type Ia supernova lightcurves and the baryon acoustic oscillation feature, both also measured by DES \cite{Abbott:2018wzc}. From this multi-probe approach, we are able to rule out a Universe with no dark energy using data only from DES. 
 
@@ -230,9 +235,9 @@ In order to evaluate tension metrics in terms of the values of cosmological para
 \end{comment}
 
 
-\subsection{Anisotropic Clustering on Simulations}
+\subsection{Anisotropic Clustering and Machine Learning Lensing}
 
-\begin{comment}
+%\begin{comment}
 Gravity acts to bring matter together since it is an attractive force. Early on in the history of the universe, all regions contained very similar amounts of matter with only small perturbations. Over billions of years, though, those small perturbations grew via gravitational instability so that the universe has become inhomogeneous. Inhomogeneities are quantified via
 \be
 \delta(\vec x) \equiv \frac{\rho(\vec x) - \bar\rho}{\bar\rho}.\ee
@@ -265,10 +270,10 @@ The goal of our project is to use data from N-Body simulations, which captures a
 
 
 To date, we have been limited by computational power. On our laptop, we used a catalog produced by the Rockstar Halo~\cite{2013ApJ...762..109B} finder based on an underlying N-Body simulation. The results are shown in Fig.~\rf{nbody}. While the signal to noise is apparently quite large, there is a factor of 2 difference between the estimated modes and their true values. This is very likely due to our use of the catalog of objects produced from the underlying simulation instead of using the raw simulation data itself. It is imperative therefore that we analyze the raw N-Body data itself.
-%So we want to try with mass particle position data instead of Halo position data and see if it works. \\
-\end{comment}
+So we want to try with mass particle position data instead of Halo position data and see if it works. \\
+%\end{comment}
 
-\peikai{We use $T(\vec{n})$ to represent the observed CMB temperature field where $\vec{n}$ is the direction of the incoming photons. Due to the distortion induced by gravitational fields along line-of-sight, the observed temperature field $T$ is related to the true (unlensed) field $\tilde{T}$ by the following expression~\cite{Hu:2001tn}~\cite{Li:2019qkp}:
+We use $T(\vec{n})$ to represent the observed CMB temperature field where $\vec{n}$ is the direction of the incoming photons. Due to the distortion induced by gravitational fields along line-of-sight, the observed temperature field $T$ is related to the true (unlensed) field $\tilde{T}$ by the following expression~\cite{Hu:2001tn}~\cite{Li:2019qkp}:
 \begin{eqnarray}
 T(\vec{n})=\tilde{T}(\vec{n}+\vec{d}(\vec{n}))
 \end{eqnarray}
@@ -282,14 +287,14 @@ Thus we find the direct relation between the observed CMB temperature field $T$ 
 \phi(\vec{L}) = \sum_{\vec{l}+\vec{l}'=\vec{L}}g(\vec{l},\vec{l}')  T(\vec{l})T(\vec{l}')
 \end{eqnarray}
 where $g$ is the weighting function. This is an exciting theory proposed about 20 years ago and worked well in current CMB surveys~\cite{Aghanim:2018oex}. \\
-We want to improve the performance of this method using CMB simulations and machine learning techniques. People have tried to reconstruct the projected gravitational field using deep neural networks~\cite{Caldeira:2018ojb} but the result is not very satisfying. We think the reason that their performance is not good enough is because, they treated the project as an image regression task while neglecting the physical properties of the two fields. So we proposed a new way of reconstruction by taking the features to be the quadratic off-diagonal elements in Fourier space - $T(\vec{l})T(\vec{l}')_{\vec{l}+\vec{l}'=\vec{L}}$ and the label simply to be the projected gravitational field $\phi(\vec{L})$. Current stage is, we have successfully written down the CMB simulation code to generate quadratic pairs $T(\vec{l})T(\vec{l}')_{\vec{l}+\vec{l}'=\vec{L}}$ and the corresponding $\phi(\vec{L})$. But since the data size is large (given that we want to compute $L$ from $\sim 50$ to up to $\sim 4000$), we are unable to run the machine learning code in our own laptop.}
+We want to improve the performance of this method using CMB simulations and machine learning techniques. People have tried to reconstruct the projected gravitational field using deep neural networks~\cite{Caldeira:2018ojb} but the result is not very satisfying. We think the reason that their performance is not good enough is because, they treated the project as an image regression task while neglecting the physical properties of the two fields. So we proposed a new way of reconstruction by taking the features to be the quadratic off-diagonal elements in Fourier space - $T(\vec{l})T(\vec{l}')_{\vec{l}+\vec{l}'=\vec{L}}$ and the label simply to be the projected gravitational field $\phi(\vec{L})$. Current stage is, we have successfully written down the CMB simulation code to generate quadratic pairs $T(\vec{l})T(\vec{l}')_{\vec{l}+\vec{l}'=\vec{L}}$ and the corresponding $\phi(\vec{L})$. But since the data size is large (given that we want to compute $L$ from $\sim 50$ to up to $\sim 4000$), we are unable to run the machine learning code in our own laptop.
 
 \section{Proposed Computational Methods}
 \subsection{DES Chains}
 
 The {\tt cosmosis} framework has all the resources necessary for the analysis we are going to perform. We have already used it to generate simulated DES-like data-vector based on the cosmological parameters that best-fit the $\Lambda$CDM model according to DES Y1 data. 
 
-\acampos{The simulated data is composed by galaxy clustering, cosmic shear and galaxy-galaxy lensing information just like it would be measured by DES. We generated two data vectors, differing only by the model of intrinsic alignment (IA) of galaxies assumed. Figure \ref{figure1} shows the cosmic shear data under the assumption of each IA model, and we can see the scales that are affected the most by the intrinsic alignment choice.}
+The simulated data is composed by galaxy clustering, cosmic shear and galaxy-galaxy lensing information just like it would be measured by DES. We generated two data vectors, differing only by the model of intrinsic alignment (IA) of galaxies assumed. Figure \ref{figure1} shows the cosmic shear data under the assumption of each IA model, and we can see the scales that are affected the most by the intrinsic alignment choice.
  
 \begin{figure}[!h]
 \begin{center}
@@ -299,7 +304,7 @@ The {\tt cosmosis} framework has all the resources necessary for the analysis we
 \label{figure1}
 \end{figure}
 
-\acampos{We are interested in how the assumption of a particular IA model affects the estimation of cosmological parameters. In particular, we want to qualitatively estimate by how much our analysis would be compromised in the case the assumed IA model is not the "true" model given by nature. Figure \ref{figure2} shows the posterior distribution for 2 cosmological parameters $\Omega_m$ and $S_8$ obtained from four MCMC chains, each assuming a combination of data and IA model. It suggests that if the true model is NLA and we analyse the data using TATT, the cosmology would still be compatible with the one we would obtain analysing the data using NLA, however the opposite does not seem to be true.} 
+We are interested in how the assumption of a particular IA model affects the estimation of cosmological parameters. In particular, we want to qualitatively estimate by how much our analysis would be compromised in the case the assumed IA model is not the "true" model given by nature. Figure \ref{figure2} shows the posterior distribution for 2 cosmological parameters $\Omega_m$ and $S_8$ obtained from four MCMC chains, each assuming a combination of data and IA model. It suggests that if the true model is NLA and we analyse the data using TATT, the cosmology would still be compatible with the one we would obtain analysing the data using NLA, however the opposite does not seem to be true.
 
 %\begin{itemize}
 %    \item Data: TATT, Model: TATT
@@ -316,7 +321,7 @@ The {\tt cosmosis} framework has all the resources necessary for the analysis we
 \label{figure2}
 \end{figure}
 
-\acampos{The purpose of the IA project is to explore the parameter space to have qualitative bounds on the regions that can distinguish between the IA model and how good, or bad, parameters in those regions would fit the cosmological model. Therefore, we need to generate a set of data-vectors, as the ones showed in Figure \ref{figure1}, at different cosmologies and run MCMC chains on those data to obtain the posteriors and related statistics. While generating the simulated data is not very computationally expensive, we estimate a total of 20 chains to be run for this project, and each of these runs take of order 100 hours using 128 cores, corresponding to approximately 12,800 Core hours per run.}
+The purpose of the IA project is to explore the parameter space to have qualitative bounds on the regions that can distinguish between the IA model and how good, or bad, parameters in those regions would fit the cosmological model. Therefore, we need to generate a set of data-vectors, as the ones showed in Figure \ref{figure1}, at different cosmologies and run MCMC chains on those data to obtain the posteriors and related statistics. While generating the simulated data is not very computationally expensive, we estimate a total of 20 chains to be run for this project, and each of these runs take of order 100 hours using 128 cores, corresponding to approximately 12,800 Core hours per run.
 
 
 \begin{comment}
@@ -344,32 +349,33 @@ The next step is run these simulated data-vectors in combination with the Planck
 %We are on the stage in which these simulated data-vectors then need to be run through the DES 3x2pt pipeline and through the combined DES+Planck pipeline to obtain the posterior and estimate the evidence in each case. 
 \end{comment}
 
-The runs we will be performing to the \acampos{Y6} DES analysis will consist of actual DES data (which we expect will take about the same time to run as the simulated one). There are different subsets of the data (e.g. galaxy clustering, cosmic shear), and also their combinations, which we will be running within different cosmological models, and also the combining with external data-sets (e.g. Planck) on these same models. For Y1 we investigated six cosmological models, the concordance cosmological model $\Lambda$CDM and it's first extension $w$CDM in which we allow for equation-of-state of darkenergy $w$ to be also a parameter of the model, nonzero curvature $\Omega_k$,  number of relativistic species $N_{eff}$ different from the standard value of 3.046, time-varying equation-of-state of darkenergy described by the parameters $w_0$ and $w_a$, and modified gravity described by the parameters $\mu_0$ and $\Sigma_0$ that modify the metric potentials. In the \acampos{Y6} analysis we expect to investigate these models and a few more.
+The runs we will be performing to the Y6 DES analysis will consist of actual DES data (which we expect will take about the same time to run as the simulated one). There are different subsets of the data (e.g. galaxy clustering, cosmic shear), and also their combinations, which we will be running within different cosmological models, and also the combining with external data-sets (e.g. Planck) on these same models. For Y1 we investigated six cosmological models, the concordance cosmological model $\Lambda$CDM and it's first extension $w$CDM in which we allow for equation-of-state of dark energy $w$ to be also a parameter of the model, nonzero curvature $\Omega_k$,  number of relativistic species $N_{eff}$ different from the standard value of 3.046, time-varying equation-of-state of dark energy described by the parameters $w_0$ and $w_a$, and modified gravity described by the parameters $\mu_0$ and $\Sigma_0$ that modify the metric potentials. In the Y6 analysis we expect to investigate these models and a few more.
 
 
 
-\subsection{Anisotropic Clustering on Simulations}
+\subsection{Anisotropic Clustering}
 
-\begin{comment}
-We would like to download and analyze all the N-Body simulation data from \url{https://www.cosmosim.org}; precisely, we will need to use positions of of all $4096^3$ particles from the HugeMDPL simulation at a snapshot of redshift $z=0$. 
+%\begin{comment}
+We are completing an analysis of all the N-Body simulation data from \url{https://www.cosmosim.org}; precisely, we used positions of of all $4096^3$ particles from the HugeMDPL simulation at a snapshot of redshift $z=0$in ~Ref.~\cite{Li:2020uug} and are now completing an analysis of the full simulation (so-called lightcone) including as many effect as possible that will be encountered when we analyze data. We then 
 %which is a N-Body simulation with Planck cosmology, box size $4000 \, \rm  Mpc/h$ and particles in total. 
 We will simply use the readgadget function from a python package to read these files and extract useful data we need. Then we will do a Fast Fourier Transform into a mesh with $1280^3$ cells, so we require enough memory and disk space to store 1.7 TBytes of data.\\
 %The overall data of snapshot $z=0$ has a size of $1.7$ Tb. 
-The Leibniz-Institute for Astrophysics Potsdam in collaboration with the MultiDark consortium created the MultiDark Database including HugeMDPL. Format of the files is gadget binary file. \\
-We will use $wget$ to download these files. Li am a registered user of \url{https://www.cosmosim.org} so has the permission to download these data. Using 1\% of the data so far has given us a sense of the analyses that will need to be run, and we have written most of the software necessary to test this idea of extracting large scale information from small scale data. Note that only a large box with excellent resolution will suffice to test this idea, because the large scale modes and their influence on small scales must be tracked simultaneously.% and if we can form a paper out of these data, we will cite~\cite{Klypin:2016kl} and give credits to this database.
-\end{comment}
+The Leibniz-Institute for Astrophysics Potsdam in collaboration with the MultiDark consortium created the MultiDark Database including HugeMDPL. The format of the files is gadget binary file. \\
+We will use $wget$ to download these files. Li is a registered user of \url{https://www.cosmosim.org} so has the permission to download these data. Using 1\% of the data so far has given us a sense of the analyses that will need to be run, and we have written most of the software necessary to test this idea of extracting large scale information from small scale data. Note that only a large box with excellent resolution will suffice to test this idea, because the large scale modes and their influence on small scales must be tracked simultaneously.% and if we can form a paper out of these data, we will cite~\cite{Klypin:2016kl} and give credits to this database.
+%\end{comment}
 
-\peikai{Given cosmological parameters, we can compute the unlensed CMB power spectrum and the projected gravitational power spectrum. Using these spectra and Healpix~\cite{Gorski:2004by}, we want to generate at least $\sim 3000$ realizations of the unlensed CMB temperature (and polarization field) along with the same amount of the projected gravitational fields. Then we find the lensed CMB fields using lenspyx (\url{https://github.com/carronj/lenspyx}). Thus we have access to the features and labels of the machine learning project. We first want to use the support vector machine (SVM) regression method first to get insight of the power of this machine learning treatment. Then we can try to further improve the performance using more advanced learning techniques, e.g. deep neural networks.}
+%\peikai{Given cosmological parameters, we can compute the unlensed CMB power spectrum and the projected gravitational power spectrum. Using these spectra and Healpix~\cite{Gorski:2004by}, we want to generate at least $\sim 3000$ realizations of the unlensed CMB temperature (and polarization field) along with the same amount of the projected gravitational fields. Then we find the lensed CMB fields using lenspyx (\url{https://github.com/carronj/lenspyx}). Thus we have access to the features and labels of the machine learning project. We first want to use the support vector machine (SVM) regression method first to get insight of the power of this machine learning treatment. Then we can try to further improve the performance using more advanced learning techniques, e.g. deep neural networks.}
 
 \section{Proposed Analyses and Justification of Requested Resources}
 
 The analyses described in the previous sections can be summarized as:
 \begin{enumerate}
 \item MCMC chains for the Intrinsic Alignment paper
-\item MCMC chains for the DES-Y3 data, key project paper
-\item Quadratic estimator applied to large N-Body simulations
+\item MCMC chains for the DES-Y6 data, key project paper
+\item Quadratic estimator applied to large N-Body simulations and to the BOSS survey
 \end{enumerate}
-\acampos{The first project will be performed in the context of DES and future weak lensing surveys, like LSST. It is already under development and we expect to have the first paper within the next six months. The second one will be an integral part of the DES Year 6 data and science release, a major effort that will be happening over the next two years. The last will lead to a paper or two over the same time scale of the first one and then -- if successful -- forge the way for analyses on real data.}
+The first project will be performed in the context of DES and future weak lensing surveys, like LSST. It is already under development and we expect to have the first paper within the next six months. The second one will be an integral part of the DES Year 6 data and science release, a major effort that will be happening over the next two years. The last has already led to one published paper~\cite{Li:2020uug} and one submitted~\cite{Li:2020luq} and will lead to another paper on BOSS data.
+%will lead to a paper or two over the same time scale of the first one and then -- if successful -- forge the way for analyses on real data.
 
 %The first two of these will be an integral part of the DES Year 3 data and science release, within the next six months. The last will lead to a paper or two over the same time scale and then -- if successful -- forge the way for analyses on real data.
 
@@ -412,8 +418,8 @@ The third project requires fewer Core hours, at least at the outset, but much mo
 %}
 
 
-\caption{Markov Chain Monte Carlos to be run on DES data and simulations. The first block, above the horizontal line, is for the \acampos{intrinsic alignment project and requires multinest chains to be run on 20 sets of simulated DES data, each generated from a cosmology either NLA or TATT model of IA. %the parameter $\Omega_m$ or $\sigma_8$ and combined with external data from the Planck satellite. %Each of these simulated data sets will also need to be re-run on DES data combined with external data from the Planck satellite. 
-The block of runs below the line mimics that required to complete the Y6 DES analysis.} Of order fifty chains will be needed from start to finish on different subsets of the data and using different models. Then, production runs will be required including several dozen on DES data combined with other external data sets.}
+\caption{Markov Chain Monte Carlos to be run on DES data and simulations. The first block, above the horizontal line, is for the ntrinsic alignment project and requires multinest chains to be run on 20 sets of simulated DES data, each generated from a cosmology either NLA or TATT model of IA. %the parameter $\Omega_m$ or $\sigma_8$ and combined with external data from the Planck satellite. %Each of these simulated data sets will also need to be re-run on DES data combined with external data from the Planck satellite. 
+The block of runs below the line mimics that required to complete the Y6 DES analysis.} Of order fifty chains will be needed from start to finish on different subsets of the data and using different models. Then, production runs will be required including several dozen on DES data combined with other external data sets.
 \label{tab:post}
 \end{center}
 \end{table}
@@ -423,7 +429,7 @@ The block of runs below the line mimics that required to complete the Y6 DES ana
 
 The Dark Energy Survey collaboration has access to computing time at the National Energy Research Scientific Computing Center (NERSC). The total allocation is 30,000,000 Core-hours for the use of the entire collaboration, with a  limit of 900,000 Core-hours per user. So far, the progress that has been made on the tensions project was achieved running chains at NERSC, but this progress has been slow because of the long wait times. The typical queue time for a job to start has been approximately 4 days, and there have been downtimes stretching to weeks. 
 
-The amount of Core-hours remaining for Campos, approximately \acampos{150,000, is not enough to conclude the Intrinsic Alignment project . The Intrinsic Alignment runs must be concluded before the analysis of Y6 data starts, such that our finding can be incorporated on it. Without the resources we are seeking here, we will not be able to conclude the runs required for this project. The PI has available of the order of 300,000} Core-hours that also will be used to perform the Y3 analysis. These were subtracted in Table \ref{tab:post} when accounting to the total time requested.
+The amount of Core-hours remaining at NERSC for Campos, approximately 150,000, is not enough to conclude the Intrinsic Alignment project . The Intrinsic Alignment runs must be concluded before the analysis of Y6 data starts, such that our finding can be incorporated on it. Without the resources we are seeking here, we will not be able to conclude the runs required for this project. The PI has available of the order of 300,000 Core-hours that also will be used to perform the Y3 analysis. These were subtracted in Table \ref{tab:post} when accounting to the total time requested.
 
 
 
@@ -432,13 +438,13 @@ The amount of Core-hours remaining for Campos, approximately \acampos{150,000, i
 
 %The first two sets of runs, those outlined in the Table, will be carried out aligned with the effort of the full DES collaboration. Therefore, these will be run over the ensuing three months by the end of the calendar year.
 
-\acampos{The first set of runs, those outlined in the Table, will be performed over the next 4 months, aiming the completion of the IA project. The second set will be carried out aligned with the effort of the full DES collaboration.}
+The first set of runs, those outlined in the Table, will be performed over the next 4 months, aiming the completion of the IA project. The second set will be carried out aligned with the effort of the full DES collaboration.
 
-The other project, whose analyses are not as well-defined and currently appear smaller in scope than the first two sets, is a longer-term project. The initial N-Body analysis requires only sufficient memory and little CPU time. However, over the course of the coming 12 months, this project may well evolve into a primary research activity. Given the relatively high risk-high reward nature of this project, it is difficult to describe in more details the plans for this project.
+The other project, whose analyses are not as well-defined and currently appear smaller in scope than the first two sets, is a longer-term project. The initial N-Body analysis requires only sufficient memory and little CPU time. However, over the course of the coming 12 months, this project is expected to evolve into a primary research activity, analyzing data from the BOSS survey. Given the relatively high risk-high reward nature of this project, it is difficult to describe in more details the plans for this project.
 
 \section{Grant Support}
 
-The PI is supported by the U.S. Dept. of Energy contract DE-SC0019248 for the project ``Physics from Cosmic Surveys.'' He is also co-I on the proposal ``New Vistas in Weak Lensing,'' funded by the NSF, tracking number 1909193. Both of these proposals fund all personnel required to successfully carry out the projects highlighted in this proposal.
+The PI is supported by the U.S. Dept. of Energy contract DE-SC0019248 for the project ``Physics from Cosmic Surveys.'' He is also PI on NSF AI Institute: Planning: Physics of the Future, Award Number 2020295. He is also co-I on the proposal ``New Vistas in Weak Lensing,'' funded by the NSF, tracking number 1909193. All of these proposals fund all personnel required to successfully carry out the projects highlighted in this proposal.
 
 \section{Total Allocation Request}
 
@@ -452,7 +458,7 @@ Our total request is:
 
 %\newpage
 
-\bibliographystyle{plain}
+\bibliographystyle{h-physrev}
 \bibliography{refs}
 
 \end{document}
