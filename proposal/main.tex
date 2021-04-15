@@ -1,0 +1,195 @@
+ \documentclass[12pt]{article}
+
+\usepackage{epsfig}
+\usepackage{comment}
+\usepackage{natbib}
+\usepackage{natbibmnfix}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subfig}
+\usepackage{bmpsize}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{breqn}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{float}
+%\usepackage{newcaptions} % changes the appearance of captions
+\usepackage{url}
+\usepackage{soul} % enables a better version of "\underline{}", called '\ul{}", which for instance permits linebreaks
+
+\setul{1.5pt}{.4pt}
+\newcommand{\UL}[1]{\ul{#1}}
+
+
+\newcounter{dummy}
+\def\@biblabel#1{\hspace*{\labelsep}[#1]}
+
+\newcommand{\df}{\delta_{\rm F}}
+\newcommand\atf{ATF}
+\newcommand\scott[1]{\textcolor{blue}{\textbf{[Scott:}~#1} ]}
+
+\def\lya{Ly$\alpha$}
+\def\lyb{Ly$\beta$}
+\def\etal{{\rm et~al.\ }}
+\def\hmpc{\;h^{-1}{\rm Mpc}}
+\def\hgpc{\;h^{-1}{\rm Gpc}}
+\def\hkpc{h^{-1}{\rm kpc}}
+\def\kpc{{\rm kpc}}
+\def\kms{{\rm \;km\;s^{-1}}}
+\def\shear{\langle \gamma^{2} (\theta) \rangle}
+\newcommand{\phiv}{\mbox{\boldmath$\phi$}}
+\newcommand{\thetav}{\mbox{\boldmath$\theta$}}
+\def\pef{\par\noindent\hangindent 15pt}
+\def\simlt{\lower.5ex\hbox{$\; \buildrel < \over \sim \;$}}
+\def\lesssim{\lower.5ex\hbox{$\; \buildrel < \over \sim \;$}}
+\def\simgt{\lower.5ex\hbox{$\; \buildrel > \over \sim \;$}}
+\def\apj{{\it Astrophys. J.}}
+\def\jcap{{\it  J. Cosmo. \& Astroparticle Phys.}}
+\def\aj{{\it Astron. J.}}
+\def\mnras{{\it Mon. Not. R. astr. Soc.}}
+\newcommand{\apjl}{ApJL}
+\newcommand{\nat}{Nature}
+\newcommand{\araa}{ARA\&A}
+\newcommand{\apjs}{ApJS}
+\newcommand{\aap}{A\&A}
+\newcommand{\pasp}{PASP}
+\newcommand{\sfig}[2]{
+\begin{center}
+\includegraphics[width=#2]{#1}
+\end{center}
+        }
+\newcommand{\Sjpg}[2]{
+    \begin{figure}[htb]
+    \sfig{./#1.jpg}{.9\columnwidth}
+    \caption{{\small #2}}
+    \label{fig:#1}
+    \end{figure}
+}
+\newcommand{\Sfig}[2]{
+    \begin{figure}[htb]
+    \sfig{./#1.pdf}{.9\columnwidth}
+    \caption{{\small #2}}
+    \label{fig:#1}
+    \end{figure}
+}
+\newcommand{\Spng}[2]{
+    \begin{figure}[htb]
+    \sfig{#1.png}{.9\columnwidth}
+    \caption{{\small #2}}
+    \label{fig:#1}
+    \end{figure}
+}
+
+\newcommand{\Sfigtwo}[3]{
+        \begin{figure}[htbp]
+\sfig{#1.eps}{.3\columnwidth}
+\sfig{#2.eps}{.3\columnwidth}
+\caption{{\small #3}}
+\label{fig:#1}
+\end{figure}
+}
+\newcommand\be{\begin{equation}}
+\newcommand{\Rf}[1]{\ref{fig:#1}}
+\newcommand{\rf}[1]{\ref{fig:#1}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\newcommand{\vs}{\nonumber\\}
+\newcommand{\ec}[1]{Eq.~(\ref{eq:#1})}
+\newcommand{\Ec}[1]{(\ref{eq:#1})}
+\newcommand{\eql}[1]{\label{eq:#1}}
+\newcommand\cov{{\rm Cov}}
+\newcommand\cl{{\mathcal{C}_l}}
+\usepackage[margin=3.0cm]{geometry}
+\usepackage{pslatex}
+\newcommand\fnl{f_{\rm NL}}
+\newcommand{\wh}[1]{\textcolor{blue}{[#1]}}
+\newcommand{\tred}[1]{\textcolor{red}{[#1]}}
+
+\newcommand\cp{C^{pri}}
+\newcommand\ci{C^{ISW}}
+\newcommand\cg{C^{gg}}
+\newcommand\cgt{C^{g-ISW}}
+\newcommand\tob{T^{\rm obs}}
+\newcommand\aob{a^{\rm obs}}
+\newcommand\tisw{T^{\rm ISW}}
+\newcommand\aisw{a^{\rm ISW}}
+\newcommand\si{C^{\rm ISW}_l}
+\newcommand\sig[1]{C^{\rm g_{#1}-ISW}_l}
+\newcommand\sg[2]{C^{\rm g_{#1}g_{#2}}_l}
+\newcommand\tp{T^p}
+
+
+%
+% definitions
+%
+% A useful Journal macro
+\def\Journal#1#2#3#4{{#1} {\bf #2}, #3 (#4)}
+% Some useful journal names
+\def\NCA{\em Nuovo Cimento\ }
+\def\NPB{{\em Nucl. Phys.} B\ }
+\def\PLB{{\em Phys. Lett.}  B\ }
+\def\PRL{{\em Phys. Rev. Lett.\ }}
+\def\PRD{{\em Phys. Rev.} D\ }
+\def\prd{{\em Phys. Rev.} D\ }
+\def\ZPC{{\em Z. Phys.} C\ }
+\def\apj{{\em Ap. J.\ }}
+\def\apjl{{\em Ap. J. Lett.\ }}
+\def\la{\hbox{${_{\displaystyle<}\atop^{\displaystyle\sim}}$}}
+\def\ga{\hbox{${_{\displaystyle>}\atop^{\displaystyle\sim}}$}}
+
+
+
+\baselineskip=11pt
+\def\msun{{\rm M_{\odot}}}
+
+%\textheight=24.3cm
+%\textwidth=16.8cm
+
+\begin{document}
+\topmargin=-2.105cm
+\oddsidemargin=-0.1cm
+\evensidemargin=0cm
+
+\begin{center}
+{\bf PSC Proposal\\}
+Peikai Li
+\end{center}
+
+\begin{small}
+
+
+\section{Introduction and Scientific Background}
+In the field of cosmology, one of the most important observation we have is the cosmic microwave background (CMB)~\cite{Dodelson:2003ft}. CMB is the observation of photons from all directions when the universe is very young; i.e. CMB directly gives us the primordial picture of the whole universe when it was approximately 380,000 years old; moreover, CMB provides us with the tightest constraint of current cosmological parameters. \\
+CMB photons' trajectory would be distorted due to the gravitational force of the structures along line-of-sight. Theoretically by considering the distortion we can form an quadratic estimator to estimate the gravitational field using observed CMB information. Our goal in this project is trying to improve the performance of the estimation using machine learning techniques.
+
+\section{Progress to Date and Motivation for Future Work}
+We use $T(\vec{n})$ to represent the observed CMB temperature field where $\vec{n}$ is the direction of the incoming photons. Due to the distortion induced by gravitational fields along line-of-sight, the observed temperature field $T$ is related to the true (unlensed) field $\tilde{T}$ by the following expression~\cite{Hu:2001tn}~\cite{Li:2019qkp}:
+\begin{eqnarray}
+T(\vec{n})=\tilde{T}(\vec{n}+\vec{d}(\vec{n}))
+\end{eqnarray}
+where the deflection angle $\vec{d}$ is related to the 3D gravitational potential $\Phi$ as:
+\begin{eqnarray}
+\vec{d}(\vec{n})&=& \vec{\nabla}_{\vec{n}} {\phi}(\vec{n})\nonumber \\
+&=&\vec{\nabla}_{\vec{n}}\bigg[ 2\int_{0}^{\infty} dz\, e^{-\tau(z)}\frac{D_{*}-D(z)}{D(z)D_{*}H(z)}\Phi(D(z)\vec{n};t(z)) \bigg]
+\end{eqnarray}
+Thus we find the direct relation between the observed CMB temperature field $T$ and the 3D gravitational field $\Phi$ - the holy grail of cosmology. After Fourier transform, we can recapture the projected gravitational field $\phi$ using off-diagonal information of the CMB temperature field. The relation can be simply written as~\cite{Hu:2001kj}~\cite{Okamoto:2003zw}:
+\begin{eqnarray}
+\phi(\vec{L}) = \sum_{\vec{l}+\vec{l}'=\vec{L}}g(\vec{l},\vec{l}')  T(\vec{l})T(\vec{l}')
+\end{eqnarray}
+where $g$ is the weighting function. This is an exciting theory proposed about 20 years ago and worked well in current CMB surveys~\cite{Aghanim:2018oex}. \\
+We want to improve the performance of this method using CMB simulations and machine learning techniques. People have tried to reconstruct the projected gravitational field using deep neural networks~\cite{Caldeira:2018ojb} but the result is not very satisfying. We think the reason that their performance is not good enough is because, they treated the project as an image regression task while neglecting the physical properties of the two fields. So we proposed a new way of reconstruction by taking the features to be the quadratic off-diagonal elements in Fourier space - $T(\vec{l})T(\vec{l}')_{\vec{l}+\vec{l}'=\vec{L}}$ and the label simply to be the projected gravitational field $\phi(\vec{L})$. Current stage is, we have successfully written down the CMB simulation code to generate quadratic pairs $T(\vec{l})T(\vec{l}')_{\vec{l}+\vec{l}'=\vec{L}}$ and the corresponding $\phi(\vec{L})$. But since the data size is large (given that we want to compute $L$ from $\sim 50$ to up to $\sim 4000$), we are unable to run the machine learning code in our own laptop.
+
+\section{Proposed Computational Methods}
+Given cosmological parameters, we can compute the unlensed CMB power spectrum and the projected gravitational power spectrum. Using these spectra and Healpix~\cite{Gorski:2004by}, we want to generate at least $\sim 3000$ realizations of the unlensed CMB temperature (and polarization field) along with the same amount of the projected gravitational fields. Then we find the lensed CMB fields using lenspyx (\url{https://github.com/carronj/lenspyx}). Thus we have access to the features and labels of the machine learning project. We first want to use the support vector machine (SVM) regression method first to get insight of the power of this machine learning treatment. Then we can try to further improve the performance using more advanced learning techniques, e.g. deep neural networks.
+%\newpage
+
+\section{Computational Resources}
+1 Terabyte storage;  NVIDIA P100 GPU $\sim 100$ hours
+
+\end{small}
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
