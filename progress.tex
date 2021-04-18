@@ -1,0 +1,215 @@
+ \documentclass[12pt]{article}
+
+\usepackage{epsfig}
+\usepackage{comment}
+%\usepackage{natbib}
+%\usepackage{h-physrev}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{subfig}
+\usepackage{bmpsize}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{breqn}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{hyperref}
+%\usepackage{newcaptions} % changes the appearance of captions
+\usepackage{url}
+\usepackage{soul} % enables a better version of "\underline{}", called '\ul{}", which for instance permits linebreaks
+
+\setul{1.5pt}{.4pt}
+\newcommand{\UL}[1]{\ul{#1}}
+
+
+\newcounter{dummy}
+\def\@biblabel#1{\hspace*{\labelsep}[#1]}
+
+\newcommand{\df}{\delta_{\rm F}}
+\newcommand\atf{ATF}
+\newcommand\scott[1]{\textcolor{blue}{\textbf{[Scott:}~#1} ]}
+
+\def\lya{Ly$\alpha$}
+\def\lyb{Ly$\beta$}
+\def\etal{{\rm et~al.\ }}
+\def\hmpc{\;h^{-1}{\rm Mpc}}
+\def\hgpc{\;h^{-1}{\rm Gpc}}
+\def\hkpc{h^{-1}{\rm kpc}}
+\def\kpc{{\rm kpc}}
+\def\kms{{\rm \;km\;s^{-1}}}
+\def\shear{\langle \gamma^{2} (\theta) \rangle}
+\newcommand{\phiv}{\mbox{\boldmath$\phi$}}
+\newcommand{\thetav}{\mbox{\boldmath$\theta$}}
+\def\pef{\par\noindent\hangindent 15pt}
+\def\simlt{\lower.5ex\hbox{$\; \buildrel < \over \sim \;$}}
+\def\lesssim{\lower.5ex\hbox{$\; \buildrel < \over \sim \;$}}
+\def\simgt{\lower.5ex\hbox{$\; \buildrel > \over \sim \;$}}
+\def\apj{{\it Astrophys. J.}}
+\def\jcap{{\it  J. Cosmo. \& Astroparticle Phys.}}
+\def\aj{{\it Astron. J.}}
+\def\mnras{{\it Mon. Not. R. astr. Soc.}}
+\newcommand{\apjl}{ApJL}
+\newcommand{\nat}{Nature}
+\newcommand{\araa}{ARA\&A}
+\newcommand{\apjs}{ApJS}
+\newcommand{\aap}{A\&A}
+\newcommand{\pasp}{PASP}
+\newcommand{\sfig}[2]{
+\begin{center}
+\includegraphics[width=#2]{#1}
+\end{center}
+        }
+\newcommand{\Sjpg}[2]{
+    \begin{figure}[htb]
+    \sfig{./#1.jpg}{.9\columnwidth}
+    \caption{{\small #2}}
+    \label{fig:#1}
+    \end{figure}
+}
+\newcommand{\Sfig}[2]{
+    \begin{figure}[!h]
+    \sfig{./#1.pdf}{.7\columnwidth}
+    \caption{{\small #2}}
+    \label{fig:#1}
+    \end{figure}
+}
+\newcommand{\Spng}[2]{
+    \begin{figure}[htb]
+    \sfig{#1.png}{.5\columnwidth}
+    \caption{{\small #2}}
+    \label{fig:#1}
+    \end{figure}
+}
+
+\newcommand{\Sfigtwo}[3]{
+        \begin{figure}[htbp]
+\sfig{#1.eps}{.3\columnwidth}
+\sfig{#2.eps}{.3\columnwidth}
+\caption{{\small #3}}
+\label{fig:#1}
+\end{figure}
+}
+\newcommand\be{\begin{equation}}
+\newcommand{\Rf}[1]{\ref{fig:#1}}
+\newcommand{\rf}[1]{\ref{fig:#1}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\newcommand{\vs}{\nonumber\\}
+\newcommand{\ec}[1]{Eq.~(\ref{eq:#1})}
+\newcommand{\Ec}[1]{(\ref{eq:#1})}
+\newcommand{\eql}[1]{\label{eq:#1}}
+\newcommand\cov{{\rm Cov}}
+\newcommand\cl{{\mathcal{C}_l}}
+\usepackage[margin=3.0cm]{geometry}
+\usepackage{pslatex}
+\newcommand\fnl{f_{\rm NL}}
+\newcommand{\wh}[1]{\textcolor{blue}{[#1]}}
+\newcommand{\tred}[1]{\textcolor{red}{[#1]}}
+\newcommand\cosmosis{{\tt cosmosis}}
+
+
+\newcommand{\acampos}[1]{\textcolor{magenta}{AC: #1}}
+\newcommand{\peikai}[1]{\textcolor{blue}{PL: #1}}
+
+\newcommand\cp{C^{pri}}
+\newcommand\ci{C^{ISW}}
+\newcommand\cg{C^{gg}}
+\newcommand\cgt{C^{g-ISW}}
+\newcommand\tob{T^{\rm obs}}
+\newcommand\aob{a^{\rm obs}}
+\newcommand\tisw{T^{\rm ISW}}
+\newcommand\aisw{a^{\rm ISW}}
+\newcommand\si{C^{\rm ISW}_l}
+\newcommand\sig[1]{C^{\rm g_{#1}-ISW}_l}
+\newcommand\sg[2]{C^{\rm g_{#1}g_{#2}}_l}
+\newcommand\tp{T^p}
+
+
+%
+% definitions
+%
+% A useful Journal macro
+\def\Journal#1#2#3#4{{#1} {\bf #2}, #3 (#4)}
+% Some useful journal names
+\def\NCA{\em Nuovo Cimento\ }
+\def\NPB{{\em Nucl. Phys.} B\ }
+\def\PLB{{\em Phys. Lett.}  B\ }
+\def\PRL{{\em Phys. Rev. Lett.\ }}
+\def\PRD{{\em Phys. Rev.} D\ }
+\def\prd{{\em Phys. Rev.} D\ }
+\def\ZPC{{\em Z. Phys.} C\ }
+\def\apj{{\em Ap. J.\ }}
+\def\apjl{{\em Ap. J. Lett.\ }}
+\def\la{\hbox{${_{\displaystyle<}\atop^{\displaystyle\sim}}$}}
+\def\ga{\hbox{${_{\displaystyle>}\atop^{\displaystyle\sim}}$}}
+
+
+
+\baselineskip=11pt
+\def\msun{{\rm M_{\odot}}}
+
+%\textheight=24.3cm
+%\textwidth=16.8cm
+
+\begin{document}
+\topmargin=-2.105cm
+\oddsidemargin=-0.1cm
+\evensidemargin=0cm
+
+\begin{center}
+{\bf Progress Report\\}
+\end{center}
+
+\begin{small}
+
+
+
+\section{Dark Energy Survey}
+
+In the two main cosmological analyses to date (Y1 and Y3) of observations of The Dark Energy Survey (DES) \cite{Abbott:2017wau}, we combined data from galaxy clustering~\cite{Elvin-Poole:2017xsf}, cosmic shear~\cite{Troxel:2017xyo} and their cross-correlation, galaxy-galaxy lensing~\cite{Prat:2017goa}. The first of these is the traditional way of inferring information about the mass of the universe using astronomical surveys: assume that galaxies trace mass, measure the statistics of the galaxy distribution, and compare with the theoretical predictions for these statistics, again assuming that the galaxy statistics that are measured are related to the mass statistics that are theoretically predicted. The assumed relation is called \emph{bias}. The second observable measured was \emph{cosmic shear}, the correlation between the shapes of background galaxies. These are distorted by the intervening mass distribution, so cosmic shear offers a unique way to probe the mass distribution in the universe without assuming anything about bias. These two sets of statistics are supplemented by one that cross-correlates the two: the positions of the foreground galaxies with the shapes of background galaxies. In each case, the two-point function is measured and computed theoretically using \cosmosis. 
+
+The PI led the effort to extract cosmology from DES using its first year of data, with fifteen papers submitted in 2017~(\cite{Abbott:2017wau} and references therein). There is a similar, although larger scale, effort now in which three times as much data was analysed (preliminary papers include , the largest cosmological data set of its kind ever explored. Our leadership in this endeavor and the partnership with PSC has already resulted in several publications~\cite{Hartley:2020euq,Lemos:2020jry,MacCrann:2020yhw,Friedrich:2020dqo,Myles:2020dyq}, with Campos co-leading the DES Y3 Tensions paper~\cite{y3-tensions} for instance. 
+%
+%The predictions depend on 26 different parameters, six that determine the cosmology and twenty other so-called ``nuisance'' parameters that are needed to quantify various astrophysical uncertainties. For example, nine parameters are needed to capture the uncertainty in how far away from us are all the galaxies used in the analysis. Computing the likelihood in this 26-dimensional space requires clever sampling techniques. For Y1, we used the {\tt multinest} sampler~\cite{Feroz:2008xx} running on the midway computing cluster at the University of Chicago. Each run took of order one day of clock time depending on the data sets used. Using 128 cores, this corresponds to between 1000-5000 Core hours per run. In total, we used 1 million Core hours for the Y1 analysis, corresponding to a few hundred runs. For Y3, we carried out the MCMC's at the PSC using the both the multinest and polychord samplers. Because the statistics errors are much smaller in Y3, more attention needed to be paid to systematic effects, and as a result, we had to carry out many more runs and each run takes about twice as long as the Y1 runs.
+
+\section{Anisotropic Clustering}
+
+%\begin{comment}
+Gravity acts to bring matter together since it is an attractive force. Early on in the history of the universe, all regions contained very similar amounts of matter with only small perturbations. Over billions of years, though, those small perturbations grew via gravitational instability so that the universe has become inhomogeneous. Inhomogeneities are quantified via
+\be
+\delta(\vec x) \equiv \frac{\rho(\vec x) - \bar\rho}{\bar\rho}.\ee
+This dimensionless over-density begins much less than one everywhere and gradually grows to become very non-uniform, with values ranging from $-1$ up to $10^{30}$ or even larger. This evolution to nonlinearity can be studied, on large scales, using perturbation theory in Fourier space.
+
+%\Spng{nbody}{The ratio of long wavelength modes inferred from the quadratic estimator of \ec{quad} to the actual values of these modes. In both cases, we use the same catalog from an N-Body simulation. The fairly sharp peak indicates that the estimator has large signal to noise. The fact that the peak is at a ratio of 2 instead of one indicates that more care must be taken relating items in the catalog to mass. For that purpose, we need to access the raw data from the simulation, which can be done only with the computing power requested in this proposal.}
+%
+
+Perturbation theory makes an interesting prediction about the first-order correction to linear evolution. For a short wavelength mode $\delta(\vec{k}_s)$, this first nonlinear contribution can be shown to be~\cite{Bernardeau:2001qr} equal to 
+\begin{eqnarray}
+\delta^{(2)}(\vec{k}_s)=\int\frac{d^{3}\vec{k}_l}{(2 \pi)^3}F_2(\vec{k}_s-\vec{k}_l,\vec{k}_l)\delta^{(1)}(\vec{k}_s-\vec{k}_l)\delta^{(1)}(\vec{k}_l)\eql{pert}
+\end{eqnarray}
+where the upper-subscript means the order of perturbation theory and $F_2$ is a known function of its arguments. Note that the second order contribution to the small wavelength modes is determined by a convolution of the product of a small and large wavelength mode. 
+This arises physically because small structure structure varies depending on the large scale environment in which it resides. \ec{pert} has the exact same form as the impact that the gravitational field has on the temperature field of the CMB, an effect called \emph{CMB lensing}. That effect has been exploited and measured by forming \emph{quadratic estimators} of the temperature fields to infer the large scale modes of the gravitational field responsible for the lensing~\cite{Hu:2001tn}.
+Similar to the CMB lensing case, we can construct a quadratic estimator in this case:
+\begin{eqnarray}
+\hat{\delta}^{(1)}(\vec{k}_l)=A(\vec{k}_l)\int \frac{d^3 \vec{k}_s}{(2\pi)^3} g(\vec{k}_s,\vec{k}_s')\delta(\vec{k}_s)\delta(\vec{k}_s')\eql{quad}
+\end{eqnarray}
+with $g$ being a weighting function, $\vec{k}_s'=\vec{k}_l-\vec{k}_s$ and $A$ is defined to require that the expectation value of the estimator $\langle \hat{\delta}^{(1)}(\vec{k}_l) \rangle=\hat{\delta}^{(1)}(\vec{k}_l)$, the actual long wavelength mode. These functions then are determined to be:
+\begin{eqnarray}
+A(\vec{k}_l)&=&\bigg[\int \frac{d^3 \vec{k}_s}{(2\pi)^3} g(\vec{k}_s,\vec{k}_s')f(\vec{k}_s,\vec{k}_s')  \bigg]^{-1} \\
+f(\vec{k}_s,\vec{k}_s')&=&F_2(-\vec{k}_s,\vec{k}_s+\vec{k}_s')P(k_s)+F_2(-\vec{k}_s',\vec{k}_s+\vec{k}_s')P(k_s') \\
+g(\vec{k}_{s_1},\vec{k}_{s_1}')&=&\frac{f(\vec{k}_{s_1},\vec{k}_{s_1}')}{2P(k_{s_1})P(k_{s_1}')}
+\end{eqnarray}
+where $P(k)$ is the linear power spectrum of matter.
+%And $F_2$ is a known function with pre-determined mathematical expression. 
+
+\ec{quad} is remarkable in that it empowers us to learn about the universe on large scales by measuring perturbations on small scales. We showed in ~\cite{Li:2020uug,Li:2020luq} that we can successfully reconstruct the large scale distribution of the matter using this quadratic estimator. Fig.~\rf{cube_dm} show one of our results; since then we have improved the method by applying a weighted estimator and incorporating the mask. We are now ready to apply this estimator to real data and are working with Ashley Ross from the BOSS collaboration to apply it to their data, which is publicly available. 
+
+
+\Sfig{cube_dm}{Left and right panels show the same density field but the left shows the inner regions (we the observers are at the origin). Top panel shows the true density field; middle panel the estimate using the quadratic estimator; and the bottom the difference between the two, which is small. This indicates that the quadratic estimator succeeds at extracting the large scale field.}
+
+\bibliographystyle{h-physrev}
+\bibliography{refs}
+\end{small}
+\end{document}
